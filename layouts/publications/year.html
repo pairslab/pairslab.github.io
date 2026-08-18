@@ -1,0 +1,41 @@
+{{ define "main" }}
+  {{ $publications := site.Data.publications }}
+  {{ $years := slice }}
+  {{ range $publications }}
+    {{ if not (in $years .year) }}
+      {{ $years = $years | append .year }}
+    {{ end }}
+  {{ end }}
+  {{ $years = sort $years "value" "desc" }}
+  {{ $latestYear := index $years 0 }}
+  {{ $currentYear := .Params.publication_year }}
+  {{ $yearPublications := where $publications "year" $currentYear }}
+  {{ $headingID := printf "publications-%v-heading" $currentYear }}
+
+  <section class="page-hero page-hero-publications">
+    <div class="page-shell">
+      <h1>Publications · {{ $currentYear }}</h1>
+      <div class="page-intro">
+        <p>Research outputs from PAIRS Lab published in {{ $currentYear }}.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="publication-browser" aria-labelledby="{{ $headingID }}">
+    <div class="section-shell">
+      {{ partial "publication-year-nav.html" (dict "years" $years "currentYear" $currentYear "latestYear" $latestYear "latestPage" false) }}
+
+      <section class="pub-year-group" aria-labelledby="{{ $headingID }}">
+        <div class="pub-year-heading">
+          <h2 id="{{ $headingID }}">{{ $currentYear }}</h2>
+          <span>{{ len $yearPublications }} outputs</span>
+        </div>
+        <div>
+          {{ range $yearPublications }}
+            {{ partial "publication-card.html" . }}
+          {{ end }}
+        </div>
+      </section>
+    </div>
+  </section>
+{{ end }}

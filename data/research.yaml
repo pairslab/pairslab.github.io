@@ -3,16 +3,12 @@
   short_title: Robust autonomy
   label: Perceive and navigate
   display_title: Robust Autonomy in Challenging and Safety-Critical Environments
-  summary: We develop perception and autonomy that remain dependable when visibility, terrain, weather, and mission conditions change.
-  editorial_video: media/research/editorial/fire-rescue-autonomy.mp4
-  editorial_image: images/research/fire-rescue-autonomy-poster.webp
-  editorial_alt: A wheeled search-and-rescue robot moving through a smoke-filled damaged industrial corridor.
-  editorial_caption: Concept visual for low-visibility robotic search and rescue.
+  summary: We combine 4D radar, vision, and robust learning so mobile systems can perceive, navigate, and recover under poor visibility, adverse weather, occlusion, and sparse sensing.
   paragraphs:
     - >-
-      Robust autonomy is the lab's longest-running research thread. Our early work studied reliable UAV tracking under darkness, occlusion, distractors, and target loss. It established the perception and failure-recovery foundations needed for systems that operate outside controlled environments.
+      Our early UAV tracking research addressed darkness, distractors, scale change, occlusion, and target loss. More recent work uses 4D radar for scene flow, moving-object tracking, 3D detection, and occupancy prediction when cameras alone are unreliable.
     - >-
-      We now combine 4D radar, vision, and complementary sensors for spatial understanding and autonomous navigation in degraded conditions. Current applications include robotic search and rescue in smoke, low visibility, debris, adverse weather, and other safety-critical environments where sensing and decision-making must remain dependable.
+      We connect these perception models to navigation, including goal-initialized policies that combine visual context with high-rate proprioception. The aim is dependable mobile autonomy under incomplete observations and changing operating conditions.
   outputs:
     - key: guide
       label: GUIDE · 2026
@@ -30,16 +26,12 @@
   short_title: Human sensing
   label: Understand people
   display_title: Human-Centered Multimodal Sensing and Interaction
-  summary: We build privacy-aware systems that understand human motion, pose, and interaction through complementary sensing modalities.
-  editorial_video: media/research/editorial/human-multimodal-sensing.mp4
-  editorial_image: images/research/human-multimodal-sensing-poster.webp
-  editorial_alt: A research participant moving in a laboratory observed by compact radar and thermal sensing devices.
-  editorial_caption: Concept visual for human-centered sensing beyond conventional RGB cameras.
+  summary: We use mmWave radar, thermal imaging, and multimodal learning to reconstruct human motion, hand pose, and body shape while reducing reliance on conventional RGB cameras.
   paragraphs:
     - >-
-      Physical AI must understand people without depending on a single camera or carefully staged lighting. We study mmWave radar, thermal imaging, and multimodal learning to recover human motion, body structure, and hand pose from sparse and unconventional signals.
+      milliFlow estimates human scene flow from sparse mmWave radar point clouds, while M4Human scales radar-based human mesh reconstruction with a 661K-frame multimodal benchmark. Together, they support motion understanding from signals that retain less appearance detail than RGB imagery.
     - >-
-      These sensing systems are designed for privacy-aware and robust human understanding. The long-term goal is to give robots the perceptual context required for safe, natural, and sustained interaction with people.
+      ThermoHands studies 3D hand pose from egocentric thermal images across 28 participants. We use these complementary modalities to build human sensing that remains useful across lighting conditions and interaction settings.
   outputs:
     - key: m4human
       label: M4Human · CVPR 2026
@@ -53,16 +45,12 @@
   short_title: Embodied autonomy
   label: Act and adapt
   display_title: Long-Horizon Robot Manipulation and Embodied Autonomy
-  summary: We study robots that plan, manipulate, recover from failure, and improve over extended tasks in real environments.
-  editorial_video: media/research/editorial/long-horizon-embodied-autonomy.mp4
-  editorial_image: images/research/long-horizon-embodied-autonomy-poster.webp
-  editorial_alt: A mobile manipulator placing an object into an open cabinet during a multi-step task.
-  editorial_caption: Concept visual for navigation and manipulation over extended tasks.
+  summary: We develop progress-aware and imitation-based policies for robots to reason about affordances, sequence actions, and recover during long-horizon manipulation.
   paragraphs:
     - >-
-      Useful robots must complete goals that unfold over many decisions rather than isolated grasps. We connect perception, affordance reasoning, planning, navigation, and contact-rich action so that a robot can retain task progress and adapt as its surroundings change.
+      PALM models action progress alongside global, spatial, and dynamic affordances, helping a manipulation policy track where a multi-step task stands. This connects scene understanding with decisions over an extended action sequence.
     - >-
-      Our work explores progress-aware policy learning, mobile manipulation, imitation learning, and recovery from failure, with an emphasis on systems that can execute meaningful tasks in semi-structured human environments.
+      Our survey of dexterous manipulation organizes imitation-learning methods, end effectors, teleoperation systems, video demonstrations, and datasets. These foundations guide our work toward reliable embodied agents in human environments.
   outputs:
     - key: palm
       label: PALM · CVPR 2026
@@ -74,16 +62,12 @@
   short_title: Scalable Physical AI
   label: Learn and scale
   display_title: Scalable Physical AI and World Models
-  summary: We investigate data, models, and efficient learning systems that capture physical structure and transfer across platforms, sensors, and tasks.
-  editorial_video: media/research/editorial/scalable-world-models.mp4
-  editorial_image: images/research/scalable-world-models-poster.webp
-  editorial_alt: Robotic hardware in a laboratory connected to multiple simulated environments and sensor representations on large displays.
-  editorial_caption: Concept visual for connecting real robotic systems with learned physical worlds.
+  summary: We build and evaluate physically grounded data, generative models, and efficient perception systems that transfer across sensors, environments, and robot platforms.
   paragraphs:
     - >-
-      Scaling Physical AI requires more than larger models: learned representations must preserve geometry, motion, contact, and causal structure. We investigate how world models can be generated, evaluated, and grounded in evidence from real sensors and robotic systems.
+      Our video-generation research asks whether learned models preserve everyday physics: Physion-Eval collects human reasoning about physical failures, while Seeking Physics uses a physics verifier to guide diffusion trajectories.
     - >-
-      This direction brings together physically grounded video evaluation, synthetic radar generation, and efficient embodied perception. The aim is to build reusable data and learning systems that transfer across environments, sensor suites, and hardware platforms.
+      RadarGen generates automotive radar point clouds from cameras, and APTO reduces computation in serialization-based point-cloud transformers through position-aware pruning. Together, these projects connect scalable data generation with efficient physical perception.
   outputs:
     - key: physion-eval
       label: Physion-Eval · 2026

@@ -1,0 +1,15 @@
+<article class="research-topic-card{{ if .external_reference }} is-external{{ end }}">
+  <div class="research-topic-media is-{{ .fit | default "contain" }}">
+    <video data-research-loop autoplay muted loop playsinline preload="none" poster="{{ .poster | relURL }}" aria-hidden="true">
+      <source data-src="{{ .demo | relURL }}" type="video/mp4">
+    </video>
+    <span class="research-topic-media-label">{{ .media_label }}</span>
+  </div>
+
+  <div class="research-topic-copy">
+    <p class="research-topic-attribution">{{ .attribution }}</p>
+    <h3>{{ .title }}</h3>
+    <p>{{ .summary }}</p>
+    <a href="{{ .project_url }}" target="_blank" rel="noreferrer">{{ .link_label }} <span aria-hidden="true">↗</span></a>
+  </div>
+</article>

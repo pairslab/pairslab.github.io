@@ -5,6 +5,8 @@
   year: 2026
   kind: Preprint
   topic: Reliable Mobile Autonomy
+  featured: true
+  image: images/publications/guide.jpg
   paper: https://arxiv.org/pdf/2606.10832
   project: https://guide-navigation.github.io/
 
@@ -15,6 +17,8 @@
   year: 2026
   kind: Preprint
   topic: Scalable Robot Learning
+  featured: true
+  image: images/publications/physion-eval.jpg
   paper: https://arxiv.org/pdf/2603.19607
   project: https://huggingface.co/datasets/PhysionLabs/Physion-Eval
 
@@ -63,8 +67,10 @@
   year: 2026
   kind: Conference
   topic: Mobile Manipulation
+  featured: true
+  image: images/publications/palm.jpg
   paper: https://arxiv.org/pdf/2601.07060
-  project: https://plan-lab.github.io/palm
+  project: https://plan-lab.github.io/projects/palm/
 
 - key: m4human
   title: "M4Human: A Large-Scale Multimodal mmWave Radar Benchmark for Human Mesh Reconstruction"
@@ -125,7 +131,6 @@
   year: 2025
   kind: Conference
   topic: Human Motion & Interaction
-  featured: true
   image: images/featured-thermohands.jpg
   paper: https://arxiv.org/pdf/2403.09871
   project: https://thermohands.github.io/
@@ -140,7 +145,6 @@
   year: 2024
   kind: Conference
   topic: Reliable Mobile Autonomy
-  featured: true
   image: images/featured-radarocc.jpg
   paper: https://arxiv.org/pdf/2405.14014
   project: https://toytiny.github.io/publication/24-radarocc-neurips/
@@ -155,7 +159,6 @@
   year: 2024
   kind: Conference
   topic: Human Motion & Interaction
-  featured: true
   image: images/featured-milliflow.jpg
   paper: https://arxiv.org/pdf/2306.17010
   code: https://github.com/Toytiny/milliFlow
@@ -189,7 +192,6 @@
   year: 2023
   kind: Conference
   topic: Reliable Mobile Autonomy
-  featured: true
   image: images/publications/hidden-gems.jpg
   paper: https://arxiv.org/pdf/2303.00462
   project: https://toytiny.github.io/publication/23-cmflow-cvpr/

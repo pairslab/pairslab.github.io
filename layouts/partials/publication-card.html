@@ -1,0 +1,16 @@
+<article class="publication-item{{ if .featured }} is-featured{{ end }}">
+  {{ $thumbnail := printf "images/publications/%s.jpg" .key }}
+  <a class="publication-thumb" href="{{ .project | default .paper }}" target="_blank" rel="noreferrer" tabindex="-1" aria-hidden="true">
+    <img src="{{ $thumbnail | relURL }}" alt="" loading="lazy">
+  </a>
+  <div class="publication-body">
+    <div class="pub-overline">
+      <span>{{ .venue }}</span>
+      <span>{{ .topic }}</span>
+    </div>
+    <h3>{{ .title }}</h3>
+    <p>{{ .authors }}</p>
+    {{ with .note }}<span class="pub-note">{{ . }}</span>{{ end }}
+    {{ partial "publication-links.html" . }}
+  </div>
+</article>

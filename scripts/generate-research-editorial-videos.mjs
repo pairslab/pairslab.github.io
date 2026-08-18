@@ -4,11 +4,15 @@ import path from "node:path";
 const baseUrl = process.env.ARK_BASE_URL || "https://ark.cn-beijing.volces.com/api/v3";
 const apiKey = process.env.ARK_API_KEY;
 const model = process.env.SEEDANCE_MODEL_ID;
-const outputDir = path.resolve("static/media/research/editorial");
+const outputDir = path.resolve("working-assets/research-video-drafts/generated");
 
 if (!apiKey || !model) {
   throw new Error("ARK_API_KEY and SEEDANCE_MODEL_ID are required.");
 }
+
+process.stderr.write(
+  "Internal previsualization only: generated clips are synthetic drafts and must not be published as research media.\n",
+);
 
 const headers = {
   Authorization: `Bearer ${apiKey}`,

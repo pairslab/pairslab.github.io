@@ -1,0 +1,23 @@
+- image: images/hero/hkustgz-administration.jpg
+  label: HKUST(GZ) administration building and Red Bird plaza
+  position: center
+  source_page: https://www.hkust-gz.edu.cn/2024/05/10/campus-scenery/
+  source_asset: https://material.hkust-gz.edu.cn/wp-content/uploads/2024/05/行政楼-2048x1126.jpg
+
+- image: images/hero/hkustgz-core-sunset.jpg
+  label: HKUST(GZ) core area at sunset
+  position: center
+  source_page: https://www.hkust-gz.edu.cn/2024/05/10/campus-scenery/
+  source_asset: https://material.hkust-gz.edu.cn/wp-content/uploads/2024/05/核心区晚霞-2048x1126.jpg
+
+- image: images/hero/hkustgz-campus-night.jpg
+  label: Aerial night view of the HKUST(GZ) campus
+  position: center
+  source_page: https://www.hkust-gz.edu.cn/2024/05/10/campus-scenery/
+  source_asset: https://material.hkust-gz.edu.cn/wp-content/uploads/2024/05/学校夜景-2048x1151.jpg
+
+- image: images/hero/hkustgz-campus-aerial.jpg
+  label: Aerial view of HKUST(GZ) and the Pearl River at sunset
+  position: 50% 58%
+  source_page: https://www.hkust-gz.edu.cn/
+  source_asset: https://material.hkust-gz.edu.cn/wp-content/uploads/2026/01/Aerial-view-of-the-campus-1-scaled.jpg

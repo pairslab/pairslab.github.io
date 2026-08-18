@@ -1,23 +1,23 @@
 - id: robust-autonomy
-  media_file: media/research/world-sensing-seedance-v2.mp4
-  poster: images/research/world-sensing-seedance-v2-poster.webp
-  media_label: Challenging environments
-  media_alt: A rugged mobile robot navigating a muddy road in fog and standing water.
+  title: Robust Autonomy in Challenging and Safety-Critical Environments
+  poster: images/publications/guide.jpg
+  media_label: Goal-conditioned navigation
+  media_alt: Diagram of the GUIDE navigation policy combining visual depth, goal initialization, and proprioceptive history to control a quadruped in simulation.
 
 - id: human-sensing
-  media_file: media/research/human-interaction.mp4
-  poster: images/research/human-interaction-poster.webp
-  media_label: Human-centered sensing
-  media_alt: Researchers interacting with a robotic arm through hand gestures in a laboratory.
+  title: Human-Centered Multimodal Sensing and Interaction
+  poster: images/featured-m4human.jpg
+  media_label: Multimodal human sensing
+  media_alt: Diagram of the M4Human capture and annotation pipeline with mmWave radar, RGB-D cameras, motion capture, and reconstructed human meshes.
 
 - id: embodied-autonomy
-  media_file: media/research/mobile-manipulation.mp4
-  poster: images/research/mobile-manipulation-poster.webp
-  media_label: Embodied autonomy
-  media_alt: A mobile manipulator picking and placing objects at a workbench.
+  title: Long-Horizon Robot Manipulation and Embodied Autonomy
+  poster: images/publications/palm.jpg
+  media_label: Long-horizon manipulation
+  media_alt: Diagram of the PALM policy with affordance prediction, multimodal inputs, an action-progress token, and its attention structure for robotic manipulation.
 
 - id: scalable-physical-ai
-  media_file: media/research/editorial/homepage-physical-world-synthesis.mp4
-  poster: images/research/homepage-physical-world-synthesis-poster.webp
-  media_label: World models and scale
-  media_alt: A robotic arm in front of synchronized displays showing diverse physical simulations.
+  title: Scalable Physical AI and World Models
+  poster: images/publications/physion-eval.jpg
+  media_label: Physics-grounded learning
+  media_alt: Physion-Eval overview showing physical video categories, human reasoning annotations, and the benchmark's physical-realism findings.

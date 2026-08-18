@@ -12,3 +12,6 @@ assets/jsconfig.json
 # Local development tools and review artifacts
 /.tools/
 /screenshots/
+
+# Internal synthetic media generated for private review
+/working-assets/research-video-drafts/generated/

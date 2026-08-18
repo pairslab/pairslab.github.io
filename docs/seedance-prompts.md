@@ -1,6 +1,10 @@
-# Seedance prompts for the homepage media slots
+# Internal concept-motion draft prompts
 
-Use one prompt per clip. Recommended output: `16:9`, `6-8 seconds`, `24 fps`, realistic motion, and a clean first/last frame for a seamless loop. Keep the clips silent; the website uses them as muted autoplay media.
+These historical Seedance prompts are retained for internal previsualization only. Generated clips are drafts, not records of PAIRS Lab systems or experiments, and are not approved website media.
+
+The helper script writes drafts to `working-assets/research-video-drafts/`, outside Hugo's published `static/` tree. Do not copy generated clips into `static/`, reference them from `data/research_media.yaml` or `data/research.yaml`, or present them as research results. The public site uses traceable figures and approved media from actual lab work.
+
+For internal review, use one prompt per clip. Recommended output: `16:9`, `6-8 seconds`, `24 fps`, realistic motion, and a clean first/last frame for a seamless loop. Keep the clips silent and label them as synthetic drafts wherever they are shared.
 
 ## 01 — Open-world sensing
 

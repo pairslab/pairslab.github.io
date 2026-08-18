@@ -11,9 +11,6 @@
 
   <section class="people-section section">
     <div class="section-shell">
-      <div class="people-heading reveal">
-        <span class="section-kicker">Principal investigator</span>
-      </div>
       <div class="people-pi-list">
         {{ range site.Data.people }}
           {{ $person := . }}
@@ -43,15 +40,15 @@
       {{ range site.Data.team_groups }}
         {{ $members := where $peoplePage.RegularPages "Params.group" .key }}
         {{ $members = $members.ByWeight }}
-        <section class="member-category">
-          <div class="member-category-heading">
-            <div>
-              <span class="section-kicker">{{ .label }}</span>
-              <h2>{{ .title }}</h2>
+        {{ if $members }}
+          <section class="member-category">
+            <div class="member-category-heading">
+              <div>
+                <span class="section-kicker">{{ .label }}</span>
+                <h2>{{ .title }}</h2>
+              </div>
+              <span>{{ len $members }} {{ if eq (len $members) 1 }}member{{ else }}members{{ end }}</span>
             </div>
-            {{ if $members }}<span>{{ len $members }} {{ if eq (len $members) 1 }}member{{ else }}members{{ end }}</span>{{ end }}
-          </div>
-          {{ if $members }}
             <div class="member-grid">
               {{ range $members }}
                 {{ $member := . }}
@@ -77,10 +74,8 @@
                 </article>
               {{ end }}
             </div>
-          {{ else }}
-            <p class="member-empty">Members will be announced here.</p>
-          {{ end }}
-        </section>
+          </section>
+        {{ end }}
       {{ end }}
     </div>
   </section>

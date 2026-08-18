@@ -1,0 +1,13 @@
+{{ define "main" }}
+  <section class="not-found">
+    <div class="section-shell not-found-shell">
+      <p class="section-kicker">404 · Page not found</p>
+      <h1>The page you requested is not here.</h1>
+      <p>Return to the lab homepage or continue with our research, publications, and people.</p>
+      <div class="not-found-actions">
+        <a class="button button-primary" href="{{ site.Home.RelPermalink }}">Back to home</a>
+        <a class="text-link" href="{{ "research/" | relURL }}">Explore research <span>↗</span></a>
+      </div>
+    </div>
+  </section>
+{{ end }}

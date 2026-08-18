@@ -3,132 +3,205 @@
   const header = document.querySelector("[data-header]");
   const nav = document.querySelector("[data-nav]");
   const navToggle = document.querySelector("[data-nav-toggle]");
+  const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 
   const setHeaderState = () => {
-    if (!header) return;
-    header.classList.toggle("is-scrolled", window.scrollY > 24);
+    header?.classList.toggle("is-scrolled", window.scrollY > 20);
   };
 
   setHeaderState();
   window.addEventListener("scroll", setHeaderState, { passive: true });
 
   if (nav && navToggle) {
-    const navToggleLabel = navToggle.querySelector(".sr-only");
-    const setNavState = (opening) => {
-      nav.classList.toggle("is-open", opening);
-      navToggle.setAttribute("aria-label", opening ? "Close navigation" : "Open navigation");
-      navToggle.setAttribute("aria-expanded", String(opening));
-      if (navToggleLabel) {
-        navToggleLabel.textContent = opening ? "Close navigation" : "Open navigation";
-      }
-      body.classList.toggle("nav-open", opening);
-    };
+    const toggleLabel = navToggle.querySelector(".sr-only");
 
-    const closeNav = () => {
-      setNavState(false);
+    const setNavState = (open) => {
+      nav.classList.toggle("is-open", open);
+      navToggle.setAttribute("aria-expanded", String(open));
+      navToggle.setAttribute("aria-label", open ? "Close navigation" : "Open navigation");
+      if (toggleLabel) toggleLabel.textContent = open ? "Close navigation" : "Open navigation";
+      body.classList.toggle("nav-open", open);
     };
 
     navToggle.addEventListener("click", () => {
-      const opening = navToggle.getAttribute("aria-expanded") !== "true";
-      setNavState(opening);
+      setNavState(navToggle.getAttribute("aria-expanded") !== "true");
     });
 
-    nav.querySelectorAll("a").forEach((link) => link.addEventListener("click", closeNav));
+    nav.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => setNavState(false));
+    });
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") setNavState(false);
+    });
+
     window.addEventListener("resize", () => {
-      if (window.innerWidth > 900) closeNav();
+      if (window.innerWidth > 920) setNavState(false);
     });
   }
 
-  const researchVideos = Array.from(document.querySelectorAll("[data-research-video]"));
-  if (researchVideos.length) {
-    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
-    const videoObserver = "IntersectionObserver" in window
-      ? new IntersectionObserver((entries) => {
-          entries.forEach((entry) => {
-            const video = entry.target;
-            if (entry.isIntersecting && !reducedMotion.matches && !document.hidden) {
-              video.play().catch(() => {});
-            } else {
-              video.pause();
-            }
-          });
-        }, { rootMargin: "120px 0px", threshold: 0.12 })
-      : null;
+  const heroSlider = document.querySelector("[data-hero-slider]");
+  if (heroSlider) {
+    const slides = Array.from(heroSlider.querySelectorAll("[data-hero-slide]"));
+    const dots = Array.from(heroSlider.querySelectorAll("[data-hero-dot]"));
+    const previous = heroSlider.querySelector("[data-hero-prev]");
+    const next = heroSlider.querySelector("[data-hero-next]");
+    const toggle = heroSlider.querySelector("[data-hero-toggle]");
+    const toggleLabel = heroSlider.querySelector("[data-hero-toggle-label]");
+    let currentIndex = 0;
+    let timer;
+    let userPaused = false;
 
-    researchVideos.forEach((video) => {
-      if (reducedMotion.matches) {
-        video.pause();
-        video.currentTime = 0;
-      } else if (videoObserver) {
-        videoObserver.observe(video);
-      }
-    });
+    const stopTimer = () => {
+      window.clearTimeout(timer);
+      timer = undefined;
+    };
 
-    document.addEventListener("visibilitychange", () => {
-      researchVideos.forEach((video) => {
-        if (document.hidden || reducedMotion.matches) video.pause();
+    const showSlide = (requestedIndex) => {
+      currentIndex = (requestedIndex + slides.length) % slides.length;
+      slides.forEach((slide, index) => slide.classList.toggle("is-active", index === currentIndex));
+      dots.forEach((dot, index) => {
+        if (index === currentIndex) {
+          dot.setAttribute("aria-current", "true");
+        } else {
+          dot.removeAttribute("aria-current");
+        }
       });
+    };
+
+    const syncToggle = () => {
+      if (!toggle || !toggleLabel) return;
+      const motionBlocked = reducedMotion.matches;
+      toggle.disabled = motionBlocked;
+      toggleLabel.textContent = motionBlocked ? "Manual" : userPaused ? "Play" : "Pause";
+      toggle.setAttribute(
+        "aria-label",
+        motionBlocked ? "Automatic slideshow disabled by reduced motion preference" : userPaused ? "Play campus slideshow" : "Pause campus slideshow",
+      );
+    };
+
+    const scheduleNext = () => {
+      stopTimer();
+      if (slides.length < 2 || userPaused || reducedMotion.matches || document.hidden) return;
+      timer = window.setTimeout(() => {
+        showSlide(currentIndex + 1);
+        scheduleNext();
+      }, 6500);
+    };
+
+    const selectSlide = (index) => {
+      showSlide(index);
+      scheduleNext();
+    };
+
+    previous?.addEventListener("click", () => selectSlide(currentIndex - 1));
+    next?.addEventListener("click", () => selectSlide(currentIndex + 1));
+    dots.forEach((dot) => {
+      dot.addEventListener("click", () => selectSlide(Number(dot.dataset.heroDot)));
     });
+    toggle?.addEventListener("click", () => {
+      if (reducedMotion.matches) return;
+      userPaused = !userPaused;
+      syncToggle();
+      scheduleNext();
+    });
+
+    document.addEventListener("visibilitychange", scheduleNext);
+    reducedMotion.addEventListener?.("change", () => {
+      syncToggle();
+      scheduleNext();
+    });
+
+    showSlide(0);
+    syncToggle();
+    scheduleNext();
   }
 
-  const publicationList = document.querySelector("[data-publication-list]");
-  if (!publicationList) return;
+  const revealItems = Array.from(document.querySelectorAll(".reveal"));
+  if (revealItems.length) {
+    if (reducedMotion.matches || !("IntersectionObserver" in window)) {
+      revealItems.forEach((item) => item.classList.add("is-visible"));
+    } else {
+      document.documentElement.classList.add("motion-ready");
+      const revealObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (!entry.isIntersecting) return;
+            entry.target.classList.add("is-visible");
+            revealObserver.unobserve(entry.target);
+          });
+        },
+        { rootMargin: "0px 0px -48px", threshold: 0.1 },
+      );
+      revealItems.forEach((item) => revealObserver.observe(item));
+    }
+  }
 
-  const publications = Array.from(document.querySelectorAll("[data-publication]"));
-  const yearGroups = Array.from(document.querySelectorAll("[data-year-group]"));
-  const search = document.querySelector("[data-pub-search]");
-  const year = document.querySelector("[data-pub-year]");
-  const kind = document.querySelector("[data-pub-kind]");
-  const topic = document.querySelector("[data-pub-topic]");
-  const count = document.querySelector("[data-pub-count]");
-  const reset = document.querySelector("[data-pub-reset]");
-  const empty = document.querySelector("[data-pub-empty]");
+  const researchVideos = Array.from(document.querySelectorAll("[data-research-video], [data-research-loop]"));
+  if (!researchVideos.length) return;
 
-  const normalize = (value) => value.trim().toLowerCase();
-
-  const applyFilters = () => {
-    const query = normalize(search?.value || "");
-    const selectedYear = year?.value || "";
-    const selectedKind = kind?.value || "";
-    const selectedTopic = topic?.value || "";
-    let visible = 0;
-
-    publications.forEach((item) => {
-      const matchesSearch = !query || item.dataset.search.includes(query);
-      const matchesYear = !selectedYear || item.dataset.year === selectedYear;
-      const matchesKind = !selectedKind || item.dataset.kind === selectedKind;
-      const matchesTopic = !selectedTopic || item.dataset.topic === selectedTopic;
-      const show = matchesSearch && matchesYear && matchesKind && matchesTopic;
-      item.hidden = !show;
-      if (show) visible += 1;
+  const loadVideo = (video) => {
+    if (video.dataset.loaded === "true") return;
+    video.querySelectorAll("source[data-src]").forEach((source) => {
+      source.src = source.dataset.src;
     });
-
-    yearGroups.forEach((group) => {
-      group.hidden = !group.querySelector("[data-publication]:not([hidden])");
-    });
-
-    if (count) count.textContent = String(visible);
-    if (empty) empty.hidden = visible !== 0;
+    video.dataset.loaded = "true";
+    video.load();
   };
 
-  [search, year, kind, topic].forEach((control) => {
-    control?.addEventListener(control === search ? "input" : "change", applyFilters);
+  const pauseVideo = (video, reset = false) => {
+    video.pause();
+    if (reset) video.currentTime = 0;
+  };
+
+  const videoObserver = "IntersectionObserver" in window
+    ? new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            const video = entry.target;
+            video.dataset.inView = String(entry.isIntersecting);
+            if (entry.isIntersecting && !reducedMotion.matches && !document.hidden) {
+              loadVideo(video);
+              video.play().catch(() => {});
+            } else {
+              pauseVideo(video);
+            }
+          });
+        },
+        { rootMargin: "120px 0px", threshold: 0.2 },
+      )
+    : null;
+
+  researchVideos.forEach((video) => {
+    if (reducedMotion.matches) {
+      pauseVideo(video, true);
+    } else if (videoObserver) {
+      videoObserver.observe(video);
+    } else {
+      loadVideo(video);
+      video.play().catch(() => {});
+    }
   });
 
-  reset?.addEventListener("click", () => {
-    if (search) search.value = "";
-    if (year) year.value = "";
-    if (kind) kind.value = "";
-    if (topic) topic.value = "";
-    history.replaceState({}, "", window.location.pathname);
-    applyFilters();
+  document.addEventListener("visibilitychange", () => {
+    researchVideos.forEach((video) => {
+      if (document.hidden) {
+        pauseVideo(video);
+      } else if (video.dataset.inView === "true" && !reducedMotion.matches) {
+        loadVideo(video);
+        video.play().catch(() => {});
+      }
+    });
   });
 
-  const initialTopic = new URLSearchParams(window.location.search).get("topic");
-  if (initialTopic && topic) {
-    const option = Array.from(topic.options).find((item) => item.value === initialTopic);
-    if (option) topic.value = option.value;
-  }
-
-  applyFilters();
+  reducedMotion.addEventListener?.("change", () => {
+    researchVideos.forEach((video) => {
+      if (reducedMotion.matches) {
+        pauseVideo(video, true);
+      } else if (video.dataset.inView === "true") {
+        loadVideo(video);
+        video.play().catch(() => {});
+      }
+    });
+  });
 })();

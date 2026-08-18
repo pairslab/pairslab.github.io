@@ -1,0 +1,15 @@
+<nav class="pub-browser-meta" aria-label="Publication archive">
+  <p>Browse by year</p>
+  <div class="pub-links">
+    {{ range .years }}
+      {{ $isLatestYear := eq (printf "%v" .) (printf "%v" $.latestYear) }}
+      {{ $isCurrent := eq (printf "%v" .) (printf "%v" $.currentYear) }}
+      {{ $isActive := or (and $.latestPage $isLatestYear) (and (not $.latestPage) $isCurrent) }}
+      {{ $href := printf "publications/%v/" . }}
+      {{ if $isLatestYear }}{{ $href = "publications/" }}{{ end }}
+      <a href="{{ $href | relURL }}"{{ if $isActive }} aria-current="page"{{ end }}>
+        {{ if $isActive }}<strong>{{ . }}</strong>{{ else }}{{ . }}{{ end }}
+      </a>
+    {{ end }}
+  </div>
+</nav>

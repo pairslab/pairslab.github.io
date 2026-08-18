@@ -1,6 +1,6 @@
 # PAIRS Lab Website
 
-Website for the Physical AI and Robotic Systems Laboratory at HKUST(GZ), built with Hugo.
+Website for the Physical AI and Robotic Systems Lab at HKUST(GZ), built with Hugo.
 
 ## Live website
 
@@ -31,7 +31,7 @@ Open `http://localhost:1313/`.
 - Recruitment copy: `layouts/join/list.html`
 - Homepage: `layouts/index.html`
 - Shared header and footer: `layouts/partials/`
-- Site styling: `static/css/site.css` and `static/css/brand-refresh.css`
+- Site styling: `static/css/site.css`
 - Images and video: `static/images/` and `static/media/`
 
 Only confirmed lab members and verified research information should be added.

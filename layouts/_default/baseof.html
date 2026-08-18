@@ -7,22 +7,26 @@
     <meta name="theme-color" content="#073968">
     {{ $description := .Description | default site.Params.marketing.seo.description }}
     <meta name="description" content="{{ $description }}">
-    <meta property="og:type" content="{{ if .IsHome }}website{{ else }}article{{ end }}">
-    <meta property="og:title" content="{{ if .IsHome }}PAIRS Lab · Physical AI and Robotic Systems Laboratory{{ else }}{{ .Title }} · PAIRS Lab{{ end }}">
+    {{ $pageTitle := cond .IsHome "PAIRS Lab · Physical AI and Robotic Systems Lab" (printf "%s · PAIRS Lab" .Title) }}
+    <meta property="og:type" content="{{ if or .IsHome .IsSection }}website{{ else }}article{{ end }}">
+    <meta property="og:site_name" content="PAIRS Lab">
+    <meta property="og:title" content="{{ $pageTitle }}">
     <meta property="og:description" content="{{ $description }}">
     <meta property="og:image" content="{{ "images/hkustgz-campus-night.jpg" | absURL }}">
-    <title>{{ if .IsHome }}PAIRS Lab · Physical AI and Robotic Systems Laboratory{{ else }}{{ .Title }} · PAIRS Lab{{ end }}</title>
+    <meta property="og:url" content="{{ .Permalink }}">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="canonical" href="{{ .Permalink }}">
+    <title>{{ $pageTitle }}</title>
     <link rel="icon" href="{{ "images/favicon-pairs.png" | relURL }}" type="image/png" sizes="96x96">
     <link rel="apple-touch-icon" href="{{ "images/favicon-pairs.png" | relURL }}">
     <link rel="stylesheet" href="{{ "css/site.css" | relURL }}">
-    <link rel="stylesheet" href="{{ "css/brand-refresh.css" | relURL }}">
     <script>
       (function () {
         document.documentElement.classList.add("js");
       })();
     </script>
   </head>
-  <body class="{{ if .IsHome }}home{{ else }}inner{{ end }}">
+  <body class="{{ if .IsHome }}home{{ else }}inner page-{{ .Section | default .Kind }}{{ end }}">
     <a class="skip-link" href="#main-content">Skip to content</a>
     {{ partial "header.html" . }}
     <main id="main-content">
