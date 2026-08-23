@@ -3,37 +3,39 @@
     <div class="hero-slides" aria-hidden="true">
       {{ range $index, $slide := site.Data.home_hero }}
         <div class="hero-slide{{ if eq $index 0 }} is-active{{ end }}" data-hero-slide>
-          <img
-            src="{{ $slide.image | relURL }}"
-            alt=""
-            style="object-position: {{ $slide.position | default "center" }};"
-            {{ if eq $index 0 }}fetchpriority="high"{{ else }}loading="lazy"{{ end }}>
+          {{ with $slide.video }}
+            <video class="hero-slide-media" data-hero-video muted loop playsinline preload="metadata" poster="{{ $slide.image | relURL }}" aria-label="{{ $slide.label }}">
+              <source src="{{ . | relURL }}" type="video/mp4">
+            </video>
+          {{ else }}
+            <img
+              class="hero-slide-media"
+              src="{{ $slide.image | relURL }}"
+              alt="{{ $slide.label }}"
+              style="object-position: {{ $slide.position | default "center" }};"
+              {{ if eq $index 0 }}fetchpriority="high"{{ else }}loading="lazy"{{ end }}>
+          {{ end }}
         </div>
       {{ end }}
     </div>
     <div class="hero-signal-lines" aria-hidden="true"></div>
     <div class="hero-shell">
-      <div class="hero-copy reveal">
-        <h1>Physical AI and Robotic Systems Lab</h1>
-        <p class="hero-lede">
-          Trustworthy and scalable Physical AI for human–machine symbiosis.
-        </p>
-        <div class="hero-actions">
-          <a class="button button-primary" href="{{ "research/" | relURL }}">Research</a>
-          <a class="button button-ghost" href="{{ "join/" | relURL }}">Join the Lab</a>
-        </div>
-      </div>
-    </div>
-    <div class="hero-controls" aria-label="Campus image slideshow controls">
-      <button class="hero-control" type="button" data-hero-prev aria-label="Previous campus image"><span aria-hidden="true">←</span></button>
-      <div class="hero-dots" aria-label="Choose a campus image">
+      <div class="hero-copy-stack">
         {{ range $index, $slide := site.Data.home_hero }}
-          <button type="button" data-hero-dot="{{ $index }}" aria-label="Show campus image {{ add $index 1 }}"{{ if eq $index 0 }} aria-current="true"{{ end }}></button>
+          <div class="hero-copy{{ if eq $index 0 }} is-active{{ end }}" data-hero-copy{{ if ne $index 0 }} aria-hidden="true"{{ end }}>
+            {{ with $slide.eyebrow }}<p class="hero-eyebrow">{{ . }}</p>{{ end }}
+            {{ if eq $index 0 }}<h1>{{ $slide.title }}</h1>{{ else }}<h2 class="hero-title">{{ $slide.title }}</h2>{{ end }}
+            <p class="hero-lede">{{ $slide.lede }}</p>
+            <div class="hero-actions">
+              <a class="button button-primary" href="{{ $slide.primary_url | relURL }}"{{ if ne $index 0 }} tabindex="-1"{{ end }}>{{ $slide.primary_label }}</a>
+              <a class="button button-ghost" href="{{ $slide.secondary_url | relURL }}"{{ if ne $index 0 }} tabindex="-1"{{ end }}>{{ $slide.secondary_label }}</a>
+            </div>
+          </div>
         {{ end }}
       </div>
-      <button class="hero-control" type="button" data-hero-next aria-label="Next campus image"><span aria-hidden="true">→</span></button>
-      <button class="hero-autoplay" type="button" data-hero-toggle aria-label="Pause campus slideshow"><span data-hero-toggle-label>Pause</span></button>
     </div>
+    <button class="hero-edge-control hero-edge-prev" type="button" data-hero-prev aria-label="Previous slide"><span aria-hidden="true">‹</span></button>
+    <button class="hero-edge-control hero-edge-next" type="button" data-hero-next aria-label="Next slide"><span aria-hidden="true">›</span></button>
   </section>
 
   <section class="latest-news section">

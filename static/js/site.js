@@ -43,14 +43,12 @@
   const heroSlider = document.querySelector("[data-hero-slider]");
   if (heroSlider) {
     const slides = Array.from(heroSlider.querySelectorAll("[data-hero-slide]"));
-    const dots = Array.from(heroSlider.querySelectorAll("[data-hero-dot]"));
+    const copies = Array.from(heroSlider.querySelectorAll("[data-hero-copy]"));
+    const videos = Array.from(heroSlider.querySelectorAll("[data-hero-video]"));
     const previous = heroSlider.querySelector("[data-hero-prev]");
     const next = heroSlider.querySelector("[data-hero-next]");
-    const toggle = heroSlider.querySelector("[data-hero-toggle]");
-    const toggleLabel = heroSlider.querySelector("[data-hero-toggle-label]");
     let currentIndex = 0;
     let timer;
-    let userPaused = false;
 
     const stopTimer = () => {
       window.clearTimeout(timer);
@@ -60,29 +58,28 @@
     const showSlide = (requestedIndex) => {
       currentIndex = (requestedIndex + slides.length) % slides.length;
       slides.forEach((slide, index) => slide.classList.toggle("is-active", index === currentIndex));
-      dots.forEach((dot, index) => {
-        if (index === currentIndex) {
-          dot.setAttribute("aria-current", "true");
+      copies.forEach((copy, index) => {
+        const isActive = index === currentIndex;
+        copy.classList.toggle("is-active", isActive);
+        copy.setAttribute("aria-hidden", String(!isActive));
+        copy.querySelectorAll("a").forEach((link) => {
+          link.tabIndex = isActive ? 0 : -1;
+        });
+      });
+      videos.forEach((video) => {
+        const isActive = video.closest("[data-hero-slide]")?.classList.contains("is-active");
+        if (isActive && !reducedMotion.matches && !document.hidden) {
+          video.play().catch(() => {});
         } else {
-          dot.removeAttribute("aria-current");
+          video.pause();
+          if (!isActive) video.currentTime = 0;
         }
       });
     };
 
-    const syncToggle = () => {
-      if (!toggle || !toggleLabel) return;
-      const motionBlocked = reducedMotion.matches;
-      toggle.disabled = motionBlocked;
-      toggleLabel.textContent = motionBlocked ? "Manual" : userPaused ? "Play" : "Pause";
-      toggle.setAttribute(
-        "aria-label",
-        motionBlocked ? "Automatic slideshow disabled by reduced motion preference" : userPaused ? "Play campus slideshow" : "Pause campus slideshow",
-      );
-    };
-
     const scheduleNext = () => {
       stopTimer();
-      if (slides.length < 2 || userPaused || reducedMotion.matches || document.hidden) return;
+      if (slides.length < 2 || reducedMotion.matches || document.hidden) return;
       timer = window.setTimeout(() => {
         showSlide(currentIndex + 1);
         scheduleNext();
@@ -96,24 +93,20 @@
 
     previous?.addEventListener("click", () => selectSlide(currentIndex - 1));
     next?.addEventListener("click", () => selectSlide(currentIndex + 1));
-    dots.forEach((dot) => {
-      dot.addEventListener("click", () => selectSlide(Number(dot.dataset.heroDot)));
-    });
-    toggle?.addEventListener("click", () => {
-      if (reducedMotion.matches) return;
-      userPaused = !userPaused;
-      syncToggle();
-      scheduleNext();
-    });
-
     document.addEventListener("visibilitychange", scheduleNext);
+    document.addEventListener("visibilitychange", () => {
+      if (document.hidden) {
+        videos.forEach((video) => video.pause());
+      } else if (!reducedMotion.matches) {
+        heroSlider.querySelector(".hero-slide.is-active [data-hero-video]")?.play().catch(() => {});
+      }
+    });
     reducedMotion.addEventListener?.("change", () => {
-      syncToggle();
+      if (reducedMotion.matches) videos.forEach((video) => video.pause());
       scheduleNext();
     });
 
     showSlide(0);
-    syncToggle();
     scheduleNext();
   }
 

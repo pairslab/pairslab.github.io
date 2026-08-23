@@ -1,23 +1,55 @@
 - image: images/hero/hkustgz-administration.jpg
   label: HKUST(GZ) administration building and Red Bird plaza
   position: center
+  title: Physical AI and Robotic Systems Lab
+  lede: Trustworthy and scalable Physical AI for human–machine symbiosis.
+  primary_label: Research
+  primary_url: research/
+  secondary_label: Join the Lab
+  secondary_url: join/
   source_page: https://www.hkust-gz.edu.cn/2024/05/10/campus-scenery/
   source_asset: https://material.hkust-gz.edu.cn/wp-content/uploads/2024/05/行政楼-2048x1126.jpg
 
+- image: images/hero/hkustgz-campus-aerial.jpg
+  label: Aerial view of HKUST(GZ) and its surrounding environment
+  video: media/research/demos/guide-navigation-clean.mp4
+  position: center
+  title: Robust Autonomy in Challenging Environments
+  lede: We combine 4D radar, vision, and robust learning so mobile systems can perceive, navigate, and recover under poor visibility, occlusion, and sparse sensing.
+  primary_label: Explore direction
+  primary_url: research/#robust-autonomy
+  secondary_label: Research overview
+  secondary_url: research/
+
 - image: images/hero/hkustgz-core-sunset.jpg
   label: HKUST(GZ) core area at sunset
+  video: media/research/demos/thermohands.mp4
   position: center
-  source_page: https://www.hkust-gz.edu.cn/2024/05/10/campus-scenery/
-  source_asset: https://material.hkust-gz.edu.cn/wp-content/uploads/2024/05/核心区晚霞-2048x1126.jpg
+  title: Human-Centered Multimodal Sensing and Interaction
+  lede: We use mmWave radar, thermal imaging, and multimodal learning to understand human motion and interaction while reducing reliance on conventional RGB cameras.
+  primary_label: Explore direction
+  primary_url: research/#human-sensing
+  secondary_label: Research overview
+  secondary_url: research/
+
+- image: images/physical-ai-lab.jpg
+  label: Robot manipulation and physical interaction in the laboratory
+  video: media/research/demos/palm-progress.mp4
+  position: center
+  title: Long-Horizon Robot Manipulation and Embodied Autonomy
+  lede: We develop progress-aware and imitation-based policies for robots to reason about affordances, sequence actions, and recover during long-horizon manipulation.
+  primary_label: Explore direction
+  primary_url: research/#embodied-autonomy
+  secondary_label: Research overview
+  secondary_url: research/
 
 - image: images/hero/hkustgz-campus-night.jpg
-  label: Aerial night view of the HKUST(GZ) campus
+  label: HKUST(GZ) campus at night
+  video: media/research/demos/physical-realism.mp4
   position: center
-  source_page: https://www.hkust-gz.edu.cn/2024/05/10/campus-scenery/
-  source_asset: https://material.hkust-gz.edu.cn/wp-content/uploads/2024/05/学校夜景-2048x1151.jpg
-
-- image: images/hero/hkustgz-campus-aerial.jpg
-  label: Aerial view of HKUST(GZ) and the Pearl River at sunset
-  position: 50% 58%
-  source_page: https://www.hkust-gz.edu.cn/
-  source_asset: https://material.hkust-gz.edu.cn/wp-content/uploads/2026/01/Aerial-view-of-the-campus-1-scaled.jpg
+  title: Scalable Physical AI and World Models
+  lede: We build and evaluate physically grounded data, generative models, and efficient perception systems that transfer across sensors, environments, and robot platforms.
+  primary_label: Explore direction
+  primary_url: research/#scalable-physical-ai
+  secondary_label: Research overview
+  secondary_url: research/
