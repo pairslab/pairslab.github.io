@@ -1,0 +1,26 @@
+{{ define "main" }}
+  <header class="news-article-hero">
+    <div class="news-article-shell reveal">
+      <a class="news-back-link" href="{{ "news/" | relURL }}"><span aria-hidden="true">←</span> All news</a>
+      <div class="news-article-meta">
+        <span>{{ .Params.category }}</span>
+        <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "January 2, 2006" }}</time>
+      </div>
+      <h1>{{ .Title }}</h1>
+      <p class="news-article-summary">{{ .Params.summary }}</p>
+    </div>
+  </header>
+
+  <article class="news-article-body">
+    <div class="news-article-shell">
+      <div class="news-article-content reveal">
+        {{ .Content }}
+        {{ with .Params.external_url }}
+          <a class="button button-primary news-source-link" href="{{ . }}" target="_blank" rel="noreferrer">
+            {{ $.Params.external_label | default "View original source" }} <span aria-hidden="true">↗</span>
+          </a>
+        {{ end }}
+      </div>
+    </div>
+  </article>
+{{ end }}

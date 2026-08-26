@@ -1,23 +1,23 @@
 - id: robust-autonomy
-  title: Robust Autonomy in Challenging and Safety-Critical Environments
+  title: Robust Mobile Autonomy for Challenging and Safety-Critical Environments
   poster: images/publications/guide.jpg
   media_label: Goal-conditioned navigation
   media_alt: Diagram of the GUIDE navigation policy combining visual depth, goal initialization, and proprioceptive history to control a quadruped in simulation.
 
 - id: human-sensing
-  title: Human-Centered Multimodal Sensing and Interaction
+  title: Human Motion and Affect Sensing
   poster: images/featured-m4human.jpg
   media_label: Multimodal human sensing
   media_alt: Diagram of the M4Human capture and annotation pipeline with mmWave radar, RGB-D cameras, motion capture, and reconstructed human meshes.
 
 - id: embodied-autonomy
-  title: Long-Horizon Robot Manipulation and Embodied Autonomy
+  title: Long-Horizon and Memory-Aware Mobile Manipulation
   poster: images/publications/palm.jpg
   media_label: Long-horizon manipulation
   media_alt: Diagram of the PALM policy with affordance prediction, multimodal inputs, an action-progress token, and its attention structure for robotic manipulation.
 
 - id: scalable-physical-ai
-  title: Scalable Physical AI and World Models
+  title: Scalable Robot Learning from Scene and Data Synthesis
   poster: images/publications/physion-eval.jpg
   media_label: Physics-grounded learning
   media_alt: Physion-Eval overview showing physical video categories, human reasoning annotations, and the benchmark's physical-realism findings.

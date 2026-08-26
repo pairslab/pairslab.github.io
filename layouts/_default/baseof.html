@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="color-scheme" content="light">
-    <meta name="theme-color" content="#073968">
+    <meta name="theme-color" content="#073566">
     {{ $description := .Description | default site.Params.marketing.seo.description }}
     <meta name="description" content="{{ $description }}">
     {{ $pageTitle := cond .IsHome "PAIRS Lab · Physical AI and Robotic Systems Lab" (printf "%s · PAIRS Lab" .Title) }}
@@ -17,9 +17,14 @@
     <meta name="twitter:card" content="summary_large_image">
     <link rel="canonical" href="{{ .Permalink }}">
     <title>{{ $pageTitle }}</title>
-    <link rel="icon" href="{{ "images/favicon-pairs.png" | relURL }}" type="image/png" sizes="96x96">
-    <link rel="apple-touch-icon" href="{{ "images/favicon-pairs.png" | relURL }}">
-    <link rel="stylesheet" href="{{ "css/site.css" | relURL }}">
+    {{ $assetVersion := site.Params.assets.version | default "1" }}
+    <link rel="icon" href="{{ "brand/favicon/pairs-lab-favicon.svg" | relURL }}" type="image/svg+xml">
+    <link rel="icon" href="{{ "brand/favicon/pairs-lab-favicon-32.png" | relURL }}" type="image/png" sizes="32x32">
+    <link rel="icon" href="{{ "brand/favicon/pairs-lab-favicon-16.png" | relURL }}" type="image/png" sizes="16x16">
+    <link rel="apple-touch-icon" href="{{ "brand/favicon/pairs-lab-favicon-180.png" | relURL }}" sizes="180x180">
+    <link rel="manifest" href="{{ "site.webmanifest" | relURL }}">
+    <link rel="stylesheet" href="{{ "brand/tokens/pairs-brand-tokens.css" | relURL }}">
+    <link rel="stylesheet" href="{{ printf "%s?v=%s" ("css/site.css" | relURL) $assetVersion }}">
     <script>
       (function () {
         document.documentElement.classList.add("js");
@@ -33,6 +38,6 @@
       {{ block "main" . }}{{ end }}
     </main>
     {{ partial "footer.html" . }}
-    <script src="{{ "js/site.js" | relURL }}" defer></script>
+    <script src="{{ printf "%s?v=%s" ("js/site.js" | relURL) $assetVersion }}" defer></script>
   </body>
 </html>

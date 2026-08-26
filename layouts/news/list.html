@@ -1,0 +1,67 @@
+{{ define "main" }}
+  {{ $news := .RegularPages.ByDate.Reverse }}
+  {{ $years := slice }}
+  {{ $categories := slice }}
+  {{ range $news }}
+    {{ $year := .Date.Format "2006" }}
+    {{ if not (in $years $year) }}{{ $years = $years | append $year }}{{ end }}
+    {{ if not (in $categories .Params.category) }}{{ $categories = $categories | append .Params.category }}{{ end }}
+  {{ end }}
+  {{ $years = sort $years "value" "desc" }}
+  {{ $categories = sort $categories }}
+
+  <section class="page-hero page-hero-news">
+    <div class="page-shell">
+      <h1>News</h1>
+      <div class="page-intro">
+        <p>Publications, awards, events, and updates from PAIRS Lab.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="news-archive" aria-label="News archive">
+    <div class="section-shell" data-news-archive>
+      <div class="news-archive-controls">
+        <label>
+          <span>Year</span>
+          <select data-news-year>
+            <option value="">All years</option>
+            {{ range $years }}<option value="{{ . }}">{{ . }}</option>{{ end }}
+          </select>
+        </label>
+        <label>
+          <span>Category</span>
+          <select data-news-category>
+            <option value="">All categories</option>
+            {{ range $categories }}<option value="{{ . }}">{{ . }}</option>{{ end }}
+          </select>
+        </label>
+      </div>
+
+      <div class="news-archive-meta">
+        <p><span data-news-count>{{ len $news }}</span> updates</p>
+        <button type="button" data-news-reset>Reset filters</button>
+      </div>
+
+      <div class="news-list news-archive-list">
+        {{ range $news }}
+          <a class="news-row reveal"
+            href="{{ .RelPermalink }}"
+            data-news-item
+            data-year="{{ .Date.Format "2006" }}"
+            data-category="{{ .Params.category }}">
+            <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Jan 02 · 2006" }}</time>
+            <span class="news-label">{{ .Params.category }}</span>
+            <div><h2>{{ .Title }}</h2><p>{{ .Params.summary }}</p></div>
+            <span class="news-arrow" aria-hidden="true">→</span>
+          </a>
+        {{ end }}
+      </div>
+
+      <div class="news-archive-empty" data-news-empty hidden>
+        <strong>No matching news.</strong>
+        <p>Try selecting a different year or category.</p>
+      </div>
+    </div>
+  </section>
+{{ end }}

@@ -1,39 +1,102 @@
 {{ define "main" }}
   {{ $publications := site.Data.publications }}
   {{ $years := slice }}
+  {{ $topics := slice }}
   {{ range $publications }}
-    {{ if not (in $years .year) }}
-      {{ $years = $years | append .year }}
-    {{ end }}
+    {{ if not (in $years .year) }}{{ $years = $years | append .year }}{{ end }}
+    {{ if not (in $topics .topic) }}{{ $topics = $topics | append .topic }}{{ end }}
   {{ end }}
   {{ $years = sort $years "value" "desc" }}
-  {{ $latestYear := index $years 0 }}
-  {{ $latestPublications := where $publications "year" $latestYear }}
 
   <section class="page-hero page-hero-publications">
     <div class="page-shell">
       <h1>Publications</h1>
       <div class="page-intro">
-        <p>Our latest research in robust perception, human sensing, robot manipulation, and scalable learning.</p>
+        <p>Research in robust perception, human sensing, robot manipulation, and scalable learning.</p>
       </div>
     </div>
   </section>
 
-  <section class="publication-browser" aria-labelledby="latest-publications-heading">
+  <section class="publication-browser" aria-label="Publication browser">
     <div class="section-shell">
-      {{ partial "publication-year-nav.html" (dict "years" $years "currentYear" $latestYear "latestYear" $latestYear "latestPage" true) }}
+      <div class="pub-controls" data-pub-controls>
+        <label class="pub-search">
+          <span>Search</span>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+          <input type="search" placeholder="Search title, author, venue…" autocomplete="off" data-pub-search>
+        </label>
 
-      <section class="pub-year-group" aria-labelledby="latest-publications-heading">
-        <div class="pub-year-heading">
-          <h2 id="latest-publications-heading">{{ $latestYear }}</h2>
-          <span>{{ len $latestPublications }} outputs</span>
+        <label>
+          <span>Year</span>
+          <select data-pub-year>
+            <option value="">All years</option>
+            {{ range $years }}<option value="{{ . }}">{{ . }}</option>{{ end }}
+          </select>
+        </label>
+
+        <label>
+          <span>Type</span>
+          <select data-pub-kind>
+            <option value="">All types</option>
+            {{ range slice "Conference" "Journal" "Preprint" "Workshop" }}<option value="{{ . }}">{{ . }}</option>{{ end }}
+          </select>
+        </label>
+
+        <label>
+          <span>Topic</span>
+          <select data-pub-topic>
+            <option value="">All topics</option>
+            {{ range $topics }}<option value="{{ . }}">{{ . }}</option>{{ end }}
+          </select>
+        </label>
+      </div>
+
+      <div class="pub-browser-meta">
+        <p><span data-pub-count>{{ len $publications }}</span> results</p>
+        <button type="button" data-pub-reset>Reset filters</button>
+      </div>
+
+      <div class="publication-list" data-publication-list>
+        {{ range $year := $years }}
+          {{ $yearPublications := where $publications "year" $year }}
+          <section class="pub-year-group" data-year-group>
+            <div class="pub-year-heading">
+              <h2>{{ $year }}</h2>
+              <span>{{ len $yearPublications }} outputs</span>
+            </div>
+            <div>
+              {{ range $yearPublications }}
+                <article class="publication-item{{ if .featured }} is-featured{{ end }}"
+                  data-publication
+                  data-year="{{ .year }}"
+                  data-kind="{{ .kind }}"
+                  data-topic="{{ .topic }}"
+                  data-search="{{ lower (printf "%s %s %s" .title .authors .venue) }}">
+                  {{ $thumbnail := printf "images/publications/%s.jpg" .key }}
+                  <a class="publication-thumb" href="{{ .project | default .paper }}" target="_blank" rel="noreferrer" tabindex="-1" aria-hidden="true">
+                    <img src="{{ $thumbnail | relURL }}" alt="" loading="lazy">
+                  </a>
+                  <div class="publication-body">
+                    <div class="pub-overline">
+                      <span>{{ .venue }}</span>
+                      <span>{{ .topic }}</span>
+                    </div>
+                    <h3>{{ .title }}</h3>
+                    <p>{{ .authors }}</p>
+                    {{ with .note }}<span class="pub-note">{{ . }}</span>{{ end }}
+                    {{ partial "publication-links.html" . }}
+                  </div>
+                </article>
+              {{ end }}
+            </div>
+          </section>
+        {{ end }}
+
+        <div class="pub-empty" data-pub-empty hidden>
+          <strong>No matching publications.</strong>
+          <p>Try removing a filter or using a broader search term.</p>
         </div>
-        <div>
-          {{ range $latestPublications }}
-            {{ partial "publication-card.html" . }}
-          {{ end }}
-        </div>
-      </section>
+      </div>
     </div>
   </section>
 {{ end }}

@@ -1,0 +1,13 @@
+:root {
+  --pairs-navy: #073566;
+  --pairs-deep-navy: #003060;
+  --pairs-blue: #1677D2;
+  --pairs-cyan: #2E95EE;
+  --pairs-ink: #18324A;
+  --pairs-muted: #536F89;
+  --pairs-pale: #EAF4FC;
+  --pairs-white: #FFFFFF;
+  --pairs-school-gold: #B28A2E;
+  --pairs-font-brand: "Futura-Medium", Futura, Arial, sans-serif;
+  --pairs-font-cn: "Source Han Sans CN Medium", "PingFang SC", sans-serif;
+}

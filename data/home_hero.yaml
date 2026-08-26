@@ -14,10 +14,10 @@
   label: Aerial view of HKUST(GZ) and its surrounding environment
   video: media/research/demos/guide-navigation-clean.mp4
   position: center
-  title: Robust Autonomy in Challenging Environments
+  title: Robust Mobile Autonomy for Challenging and Safety-Critical Environments
   lede: We combine 4D radar, vision, and robust learning so mobile systems can perceive, navigate, and recover under poor visibility, occlusion, and sparse sensing.
   primary_label: Explore direction
-  primary_url: research/#robust-autonomy
+  primary_url: research/robust-mobile-autonomy/
   secondary_label: Research overview
   secondary_url: research/
 
@@ -25,10 +25,10 @@
   label: HKUST(GZ) core area at sunset
   video: media/research/demos/thermohands.mp4
   position: center
-  title: Human-Centered Multimodal Sensing and Interaction
+  title: Human Motion and Affect Sensing
   lede: We use mmWave radar, thermal imaging, and multimodal learning to understand human motion and interaction while reducing reliance on conventional RGB cameras.
   primary_label: Explore direction
-  primary_url: research/#human-sensing
+  primary_url: research/human-motion-and-affect-sensing/
   secondary_label: Research overview
   secondary_url: research/
 
@@ -36,10 +36,10 @@
   label: Robot manipulation and physical interaction in the laboratory
   video: media/research/demos/palm-progress.mp4
   position: center
-  title: Long-Horizon Robot Manipulation and Embodied Autonomy
+  title: Long-Horizon and Memory-Aware Mobile Manipulation
   lede: We develop progress-aware and imitation-based policies for robots to reason about affordances, sequence actions, and recover during long-horizon manipulation.
   primary_label: Explore direction
-  primary_url: research/#embodied-autonomy
+  primary_url: research/memory-aware-mobile-manipulation/
   secondary_label: Research overview
   secondary_url: research/
 
@@ -47,9 +47,9 @@
   label: HKUST(GZ) campus at night
   video: media/research/demos/physical-realism.mp4
   position: center
-  title: Scalable Physical AI and World Models
+  title: Scalable Robot Learning from Scene and Data Synthesis
   lede: We build and evaluate physically grounded data, generative models, and efficient perception systems that transfer across sensors, environments, and robot platforms.
   primary_label: Explore direction
-  primary_url: research/#scalable-physical-ai
+  primary_url: research/scalable-robot-learning/
   secondary_label: Research overview
   secondary_url: research/

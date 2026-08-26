@@ -40,7 +40,7 @@
       {{ range site.Data.team_groups }}
         {{ $members := where $peoplePage.RegularPages "Params.group" .key }}
         {{ $members = $members.ByWeight }}
-        {{ if $members }}
+        {{ if or $members .show_when_empty }}
           <section class="member-category">
             <div class="member-category-heading">
               <div>
@@ -49,31 +49,29 @@
               </div>
               <span>{{ len $members }} {{ if eq (len $members) 1 }}member{{ else }}members{{ end }}</span>
             </div>
-            <div class="member-grid">
-              {{ range $members }}
-                {{ $member := . }}
-                {{ $imageURL := partial "member-image.html" (dict "page" . "src" .Params.image) }}
-                <article class="member-card">
-                  <a class="member-card-link" href="{{ .RelPermalink }}" aria-label="View {{ .Title }}'s profile">
-                    <div class="member-photo">
-                      <img src="{{ $imageURL }}" alt="{{ .Title }}" loading="lazy">
-                    </div>
-                    <h3>{{ .Title }}</h3>
-                    {{ with .Params.institution }}
-                      <p class="member-origin">from <span>{{ . }}</span></p>
-                    {{ else }}
-                      {{ with .Params.position }}<p class="member-position">{{ . }}</p>{{ end }}
-                      {{ with .Params.affiliation }}<p class="member-affiliation">{{ . }}</p>{{ end }}
-                    {{ end }}
-                    {{ if or .Params.period .Params.card_interests }}
-                      <p class="member-profile-summary">
-                        {{ with .Params.period }}{{ . }}{{ end }}{{ if and .Params.period .Params.card_interests }}: {{ end }}{{ range $index, $interest := .Params.card_interests }}{{ if $index }}, {{ end }}{{ $interest }}{{ end }}
-                      </p>
-                    {{ end }}
-                  </a>
-                </article>
-              {{ end }}
-            </div>
+            {{ if $members }}
+              <div class="member-grid">
+                {{ range $members }}
+                  {{ $member := . }}
+                  {{ $imageURL := partial "member-image.html" (dict "page" . "src" .Params.image) }}
+                  <article class="member-card">
+                    <a class="member-card-link" href="{{ .RelPermalink }}" aria-label="View {{ .Title }}'s profile">
+                      <div class="member-photo">
+                        <img src="{{ $imageURL }}" alt="{{ .Title }}" loading="lazy">
+                      </div>
+                      <h3>{{ .Title }}</h3>
+                      {{ if or .Params.period .Params.card_interests }}
+                        <p class="member-profile-summary">
+                          {{ with .Params.period }}{{ . }}{{ end }}{{ if and .Params.period .Params.card_interests }}: {{ end }}{{ range $index, $interest := .Params.card_interests }}{{ if $index }}, {{ end }}{{ $interest }}{{ end }}
+                        </p>
+                      {{ end }}
+                    </a>
+                  </article>
+                {{ end }}
+              </div>
+            {{ else }}
+              <p class="member-empty">Member profiles will be added soon.</p>
+            {{ end }}
           </section>
         {{ end }}
       {{ end }}

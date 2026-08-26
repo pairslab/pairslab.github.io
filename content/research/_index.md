@@ -1,4 +1,4 @@
 ---
 title: Research
-description: A long-term research vision for human–physical intelligence symbiosis in the real world.
+description: Physical AI and four research directions at PAIRS Lab.
 ---

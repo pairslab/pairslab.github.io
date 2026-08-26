@@ -1,0 +1,20 @@
+{
+  "name": "PAIRS Lab",
+  "short_name": "PAIRS Lab",
+  "description": "Physical AI and Robotic Systems Lab at HKUST(GZ)",
+  "icons": [
+    {
+      "src": "brand/favicon/pairs-lab-favicon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "brand/favicon/pairs-lab-favicon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#073566",
+  "background_color": "#FFFFFF",
+  "display": "standalone"
+}

@@ -25,4 +25,4 @@ card_interests:
   - World Models
 ---
 
-Hanlin Liu is a Research Assistant at PAIRS Lab, The Hong Kong University of Science and Technology (Guangzhou). His research interests include manipulation, world models, and reinforcement learning.
+Hanlin Liu is a Research Assistant at PAIRS Lab, The Hong Kong University of Science and Technology (Guangzhou). His home institution is Beijing Institute of Technology (BIT). His research interests include manipulation, world models, and reinforcement learning.

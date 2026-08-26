@@ -27,14 +27,17 @@ Open `http://localhost:1313/`.
 - PI directory data: `data/people.yaml`
 - PhD, MPhil, and RA profiles: one page bundle per member under `content/people/`
 - Shareable member submission package: `member-profile-template/`
-- News: `data/news.yaml`
+- News: one page bundle per update under `content/news/`; the homepage automatically shows the three most recent entries
 - Recruitment copy: `layouts/join/list.html`
 - Homepage: `layouts/index.html`
 - Shared header and footer: `layouts/partials/`
+- Approved PAIRS Lab web brand assets: `static/brand/`
 - Site styling: `static/css/site.css`
 - Images and video: `static/images/` and `static/media/`
 
 Only confirmed lab members and verified research information should be added.
+Use only the approved assets documented in `docs/brand-assets.md` when changing
+logos, icons, or core brand colours.
 
 ## Production build
 

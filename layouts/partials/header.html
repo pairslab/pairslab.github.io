@@ -1,11 +1,10 @@
 <header class="site-header" data-header>
   <div class="header-shell">
     <a class="brand" href="{{ site.Home.RelPermalink }}" aria-label="PAIRS Lab home">
-      <img class="brand-mark" src="{{ "images/pairs-mark-header.png" | relURL }}" alt="">
-      <span class="brand-copy">
-        <strong>PAIRS Lab</strong>
-        <small>Physical AI &amp; Robotic Systems</small>
-      </span>
+      <picture class="brand-logo">
+        <source media="(max-width: 680px)" srcset="{{ "brand/logo/pairs-lab-compact-horizontal-color.svg" | relURL }}">
+        <img src="{{ "brand/logo/pairs-lab-primary-horizontal-color.svg" | relURL }}" alt="PAIRS Lab — Physical AI and Robotic Systems Lab">
+      </picture>
     </a>
 
     <button class="nav-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="site-navigation" data-nav-toggle>

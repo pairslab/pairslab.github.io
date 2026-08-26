@@ -20,4 +20,4 @@ card_interests:
   - Robot Manipulation
 ---
 
-Jiahui Gan is a Research Assistant at PAIRS Lab, The Hong Kong University of Science and Technology (Guangzhou). His research interests include reinforcement learning and robot manipulation.
+Jiahui Gan is a Research Assistant at PAIRS Lab, The Hong Kong University of Science and Technology (Guangzhou). His home institution is China University of Petroleum (Beijing) (CUPB). His research interests include reinforcement learning and robot manipulation.

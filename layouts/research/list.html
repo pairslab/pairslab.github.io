@@ -1,57 +1,48 @@
 {{ define "main" }}
-  {{ $programs := site.Data.research }}
-  {{ $publications := site.Data.publications }}
+  {{ $directions := site.Data.research }}
 
-  <header class="research-editorial-hero">
-    <div class="research-editorial-shell reveal">
-      <p class="research-editorial-kicker">PAIRS Lab</p>
+  <header class="research-overview-hero">
+    <div class="research-overview-shell reveal">
+      <p class="section-kicker">PAIRS Lab</p>
       <h1>Research</h1>
-      <p>Ongoing and evolving research programs in trustworthy and scalable Physical AI.</p>
     </div>
   </header>
 
-  <div class="research-editorial-list">
-    <div class="research-editorial-shell">
-      {{ range $programs }}
-        {{ $program := . }}
-        {{ $topics := index site.Data.research_topics .id }}
-        <article class="research-editorial-program" id="{{ .id }}">
-          <header class="research-editorial-program-heading reveal">
-            <p><span>{{ .number }}</span>{{ .label }}</p>
-            <h2>{{ .display_title }}</h2>
-          </header>
-
-          <div class="research-editorial-copy reveal">
-            {{ range .paragraphs }}
-              <p>{{ . }}</p>
-            {{ end }}
-          </div>
-
-          <div class="research-topic-grid">
-            {{ range $topics }}
-              {{ partial "research-topic-card.html" . }}
-            {{ end }}
-          </div>
-
-          <p class="research-editorial-outputs reveal">
-            <strong>Related outputs:</strong>
-            {{ range .outputs }}
-              {{ $output := . }}
-              {{ range first 1 (where $publications "key" .key) }}
-                {{ $destination := .project | default .paper }}
-                <a href="{{ $destination }}" target="_blank" rel="noreferrer">[{{ $output.label }}]</a>
-              {{ end }}
-            {{ end }}
-          </p>
-        </article>
-      {{ end }}
+  <section class="physical-ai-intro" aria-labelledby="physical-ai-heading">
+    <div class="research-overview-shell physical-ai-intro-grid">
+      <div class="reveal">
+        <p class="section-kicker">Our foundation</p>
+        <h2 id="physical-ai-heading">Physical AI</h2>
+      </div>
+      <div class="physical-ai-intro-copy reveal">
+        <p>
+          Physical AI brings intelligence into systems that sense, learn, reason, and act in
+          the physical world. It connects perception with real-world dynamics, uncertainty,
+          contact, and human behavior so that decisions lead to safe and dependable action.
+        </p>
+        <p>
+          PAIRS Lab studies the sensing, learning, and control foundations needed for
+          trustworthy and scalable Physical AI across mobile robots, human-centered systems,
+          manipulation, and data-driven robot learning.
+        </p>
+      </div>
     </div>
-  </div>
+  </section>
 
-  <section class="research-editorial-footer">
-    <div class="research-editorial-shell reveal">
-      <p>For full abstracts, authors, figures, and project resources, visit the publication archive.</p>
-      <a class="button button-primary" href="{{ "publications/" | relURL }}">Browse all publications</a>
+  <section class="research-direction-index" aria-labelledby="research-directions-heading">
+    <div class="research-overview-shell">
+      <div class="section-heading reveal">
+        <h2 id="research-directions-heading">Research Directions</h2>
+      </div>
+      <nav class="research-direction-grid" aria-label="Research directions">
+        {{ range $directions }}
+          <a class="research-direction-entry reveal" href="{{ printf "research/%s/" .slug | relURL }}">
+            <span class="research-direction-number">{{ .number }}</span>
+            <h3>{{ .display_title }}</h3>
+            <span class="research-direction-link">View direction <span aria-hidden="true">→</span></span>
+          </a>
+        {{ end }}
+      </nav>
     </div>
   </section>
 {{ end }}

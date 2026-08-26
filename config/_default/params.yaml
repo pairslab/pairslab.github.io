@@ -5,6 +5,9 @@
 
 # Appearance
 
+assets:
+  version: '20260826-brand-v1'
+
 appearance:
   theme_day: minimal
   theme_night: minimal

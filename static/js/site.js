@@ -130,6 +130,104 @@
     }
   }
 
+  const publicationList = document.querySelector("[data-publication-list]");
+  if (publicationList) {
+    const publications = Array.from(publicationList.querySelectorAll("[data-publication]"));
+    const yearGroups = Array.from(publicationList.querySelectorAll("[data-year-group]"));
+    const search = document.querySelector("[data-pub-search]");
+    const year = document.querySelector("[data-pub-year]");
+    const kind = document.querySelector("[data-pub-kind]");
+    const topic = document.querySelector("[data-pub-topic]");
+    const count = document.querySelector("[data-pub-count]");
+    const reset = document.querySelector("[data-pub-reset]");
+    const empty = document.querySelector("[data-pub-empty]");
+
+    const normalize = (value) => value.trim().toLowerCase();
+
+    const applyPublicationFilters = () => {
+      const query = normalize(search?.value || "");
+      const selectedYear = year?.value || "";
+      const selectedKind = kind?.value || "";
+      const selectedTopic = topic?.value || "";
+      let visible = 0;
+
+      publications.forEach((item) => {
+        const matchesSearch = !query || item.dataset.search.includes(query);
+        const matchesYear = !selectedYear || item.dataset.year === selectedYear;
+        const matchesKind = !selectedKind || item.dataset.kind === selectedKind;
+        const matchesTopic = !selectedTopic || item.dataset.topic === selectedTopic;
+        const show = matchesSearch && matchesYear && matchesKind && matchesTopic;
+        item.hidden = !show;
+        if (show) visible += 1;
+      });
+
+      yearGroups.forEach((group) => {
+        group.hidden = !group.querySelector("[data-publication]:not([hidden])");
+      });
+
+      if (count) count.textContent = String(visible);
+      if (empty) empty.hidden = visible !== 0;
+    };
+
+    [search, year, kind, topic].forEach((control) => {
+      control?.addEventListener(control === search ? "input" : "change", applyPublicationFilters);
+    });
+
+    reset?.addEventListener("click", () => {
+      if (search) search.value = "";
+      if (year) year.value = "";
+      if (kind) kind.value = "";
+      if (topic) topic.value = "";
+      window.history.replaceState({}, "", window.location.pathname);
+      applyPublicationFilters();
+    });
+
+    const initialTopic = new URLSearchParams(window.location.search).get("topic");
+    if (initialTopic && topic) {
+      const matchingOption = Array.from(topic.options).find((option) => option.value === initialTopic);
+      if (matchingOption) topic.value = matchingOption.value;
+    }
+
+    applyPublicationFilters();
+  }
+
+  const newsArchive = document.querySelector("[data-news-archive]");
+  if (newsArchive) {
+    const items = Array.from(newsArchive.querySelectorAll("[data-news-item]"));
+    const year = newsArchive.querySelector("[data-news-year]");
+    const category = newsArchive.querySelector("[data-news-category]");
+    const count = newsArchive.querySelector("[data-news-count]");
+    const reset = newsArchive.querySelector("[data-news-reset]");
+    const empty = newsArchive.querySelector("[data-news-empty]");
+
+    const applyNewsFilters = () => {
+      const selectedYear = year?.value || "";
+      const selectedCategory = category?.value || "";
+      let visible = 0;
+
+      items.forEach((item) => {
+        const matchesYear = !selectedYear || item.dataset.year === selectedYear;
+        const matchesCategory = !selectedCategory || item.dataset.category === selectedCategory;
+        const show = matchesYear && matchesCategory;
+        item.hidden = !show;
+        if (show) visible += 1;
+      });
+
+      if (count) count.textContent = String(visible);
+      if (empty) empty.hidden = visible !== 0;
+    };
+
+    [year, category].forEach((control) => control?.addEventListener("change", applyNewsFilters));
+
+    reset?.addEventListener("click", () => {
+      if (year) year.value = "";
+      if (category) category.value = "";
+      applyNewsFilters();
+    });
+
+    applyNewsFilters();
+  }
+
   const researchVideos = Array.from(document.querySelectorAll("[data-research-video], [data-research-loop]"));
   if (!researchVideos.length) return;
 

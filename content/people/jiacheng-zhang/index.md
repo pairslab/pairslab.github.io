@@ -18,4 +18,4 @@ card_interests:
   - Physical Intelligence
 ---
 
-Jiacheng Zhang is a Research Assistant at PAIRS Lab, The Hong Kong University of Science and Technology (Guangzhou). His research interests include physical intelligence, world models, and vision-language-action models.
+Jiacheng Zhang is a Research Assistant at PAIRS Lab, The Hong Kong University of Science and Technology (Guangzhou). His home institution is Sun Yat-sen University (SYSU). His research interests include physical intelligence, world models, and vision-language-action models.

@@ -1,0 +1,17 @@
+{{ define "main" }}
+  <header class="research-direction-hero">
+    <div class="research-overview-shell reveal">
+      <a class="research-back-link" href="{{ "research/" | relURL }}"><span aria-hidden="true">←</span> Research</a>
+      <p class="section-kicker">Research Direction {{ .Params.direction_number }}</p>
+      <h1>{{ .Title }}</h1>
+    </div>
+  </header>
+
+  <section class="research-direction-placeholder">
+    <div class="research-overview-shell reveal">
+      <p class="section-kicker">Direction overview</p>
+      <h2>Detailed content is in preparation.</h2>
+      <p>This page is reserved for the direction introduction, current research, methods, and selected outcomes.</p>
+    </div>
+  </section>
+{{ end }}
