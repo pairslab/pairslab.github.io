@@ -1,19 +1,79 @@
 - id: robust-autonomy
   number: "01"
   slug: robust-mobile-autonomy
+  nav_title: Mobile Autonomy
+  label: Perceive and navigate
   display_title: Robust Mobile Autonomy for Challenging and Safety-Critical Environments
+  paragraphs:
+    - >-
+      Our early UAV tracking research addressed darkness, distractors, scale change, occlusion, and target loss. More recent work uses 4D radar for scene flow, moving-object tracking, 3D detection, and occupancy prediction when cameras alone are unreliable.
+    - >-
+      We connect these perception models to navigation, including goal-initialized policies that combine visual context with high-rate proprioception. The aim is dependable mobile autonomy under incomplete observations and changing operating conditions.
+  outputs:
+    - key: guide
+      label: GUIDE · 2026
+    - key: radarocc
+      label: RadarOcc · NeurIPS 2024
+    - key: hidden-gems
+      label: Hidden Gems · CVPR 2023
+    - key: autotrack
+      label: AutoTrack · CVPR 2020
+    - key: backdraft
+      label: Backdraft Forecasting · 2024
 
 - id: human-sensing
   number: "02"
   slug: human-motion-and-affect-sensing
+  nav_title: Human Sensing
+  label: Understand people
   display_title: Human Motion and Affect Sensing
+  paragraphs:
+    - >-
+      milliFlow estimates human scene flow from sparse mmWave radar point clouds, while M4Human scales radar-based human mesh reconstruction with a 661K-frame multimodal benchmark. Together, they support motion understanding from signals that retain less appearance detail than RGB imagery.
+    - >-
+      ThermoHands studies 3D hand pose from egocentric thermal images across 28 participants. We use these complementary modalities to build human sensing that remains useful across lighting conditions and interaction settings.
+  outputs:
+    - key: m4human
+      label: M4Human · CVPR 2026
+    - key: thermohands
+      label: ThermoHands · SenSys 2025
+    - key: milliflow
+      label: milliFlow · ECCV 2024
 
 - id: embodied-autonomy
   number: "03"
   slug: memory-aware-mobile-manipulation
+  nav_title: Long-Horizon Manipulation
+  label: Act and adapt
   display_title: Long-Horizon and Memory-Aware Mobile Manipulation
+  paragraphs:
+    - >-
+      PALM models action progress alongside global, spatial, and dynamic affordances, helping a manipulation policy track where a multi-step task stands. This connects scene understanding with decisions over an extended action sequence.
+    - >-
+      Our survey of dexterous manipulation organizes imitation-learning methods, end effectors, teleoperation systems, video demonstrations, and datasets. These foundations guide our work toward reliable embodied agents in human environments.
+  outputs:
+    - key: palm
+      label: PALM · CVPR 2026
+    - key: dexterous-survey
+      label: Dexterous Manipulation Survey · T-ASE 2025
 
 - id: scalable-physical-ai
   number: "04"
   slug: scalable-robot-learning
+  nav_title: Scalable Robot Learning
+  label: Learn and scale
   display_title: Scalable Robot Learning from Scene and Data Synthesis
+  paragraphs:
+    - >-
+      Our video-generation research asks whether learned models preserve everyday physics: Physion-Eval collects human reasoning about physical failures, while Seeking Physics uses a physics verifier to guide diffusion trajectories.
+    - >-
+      RadarGen generates automotive radar point clouds from cameras, and APTO reduces computation in serialization-based point-cloud transformers through position-aware pruning. Together, these projects connect scalable data generation with efficient physical perception.
+  outputs:
+    - key: physion-eval
+      label: Physion-Eval · 2026
+    - key: seeking-physics
+      label: Seeking Physics · 2026
+    - key: radargen
+      label: RadarGen · ECCV 2026
+    - key: apto
+      label: APTO · ASP-DAC 2025

@@ -17,7 +17,7 @@
   title: Robust Mobile Autonomy for Challenging and Safety-Critical Environments
   lede: We combine 4D radar, vision, and robust learning so mobile systems can perceive, navigate, and recover under poor visibility, occlusion, and sparse sensing.
   primary_label: Explore direction
-  primary_url: research/robust-mobile-autonomy/
+  primary_url: research/#robust-autonomy
   secondary_label: Research overview
   secondary_url: research/
 
@@ -28,7 +28,7 @@
   title: Human Motion and Affect Sensing
   lede: We use mmWave radar, thermal imaging, and multimodal learning to understand human motion and interaction while reducing reliance on conventional RGB cameras.
   primary_label: Explore direction
-  primary_url: research/human-motion-and-affect-sensing/
+  primary_url: research/#human-sensing
   secondary_label: Research overview
   secondary_url: research/
 
@@ -39,7 +39,7 @@
   title: Long-Horizon and Memory-Aware Mobile Manipulation
   lede: We develop progress-aware and imitation-based policies for robots to reason about affordances, sequence actions, and recover during long-horizon manipulation.
   primary_label: Explore direction
-  primary_url: research/memory-aware-mobile-manipulation/
+  primary_url: research/#embodied-autonomy
   secondary_label: Research overview
   secondary_url: research/
 
@@ -50,6 +50,6 @@
   title: Scalable Robot Learning from Scene and Data Synthesis
   lede: We build and evaluate physically grounded data, generative models, and efficient perception systems that transfer across sensors, environments, and robot platforms.
   primary_label: Explore direction
-  primary_url: research/scalable-robot-learning/
+  primary_url: research/#scalable-physical-ai
   secondary_label: Research overview
   secondary_url: research/

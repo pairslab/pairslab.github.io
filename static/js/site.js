@@ -228,6 +228,44 @@
     applyNewsFilters();
   }
 
+  const researchSectionNav = document.querySelector("[data-research-section-nav]");
+  if (researchSectionNav) {
+    const researchLinks = Array.from(researchSectionNav.querySelectorAll("[data-research-section-link]"));
+    const researchSections = researchLinks
+      .map((link) => document.getElementById(link.dataset.researchSectionLink))
+      .filter(Boolean);
+
+    const setActiveResearchSection = (id) => {
+      researchLinks.forEach((link) => {
+        const isActive = link.dataset.researchSectionLink === id;
+        link.classList.toggle("is-active", isActive);
+        if (isActive) {
+          link.setAttribute("aria-current", "location");
+        } else {
+          link.removeAttribute("aria-current");
+        }
+      });
+    };
+
+    const initialSection = window.location.hash.slice(1) || researchSections[0]?.id;
+    if (initialSection) setActiveResearchSection(initialSection);
+
+    researchLinks.forEach((link) => {
+      link.addEventListener("click", () => setActiveResearchSection(link.dataset.researchSectionLink));
+    });
+
+    if ("IntersectionObserver" in window) {
+      const researchSectionObserver = new IntersectionObserver(
+        (entries) => {
+          const activeEntry = entries.find((entry) => entry.isIntersecting);
+          if (activeEntry) setActiveResearchSection(activeEntry.target.id);
+        },
+        { rootMargin: "-35% 0px -55%", threshold: 0 },
+      );
+      researchSections.forEach((section) => researchSectionObserver.observe(section));
+    }
+  }
+
   const researchVideos = Array.from(document.querySelectorAll("[data-research-video], [data-research-loop]"));
   if (!researchVideos.length) return;
 

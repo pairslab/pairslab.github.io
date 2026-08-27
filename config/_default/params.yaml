@@ -6,7 +6,7 @@
 # Appearance
 
 assets:
-  version: '20260826-brand-v1'
+  version: '20260828-research-nav-v1'
 
 appearance:
   theme_day: minimal

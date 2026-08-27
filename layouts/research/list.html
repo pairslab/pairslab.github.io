@@ -1,5 +1,6 @@
 {{ define "main" }}
-  {{ $directions := site.Data.research }}
+  {{ $programs := site.Data.research }}
+  {{ $publications := site.Data.publications }}
 
   <header class="research-overview-hero">
     <div class="research-overview-shell reveal">
@@ -29,20 +30,59 @@
     </div>
   </section>
 
-  <section class="research-direction-index" aria-labelledby="research-directions-heading">
-    <div class="research-overview-shell">
-      <div class="section-heading reveal">
-        <h2 id="research-directions-heading">Research Directions</h2>
-      </div>
-      <nav class="research-direction-grid" aria-label="Research directions">
-        {{ range $directions }}
-          <a class="research-direction-entry reveal" href="{{ printf "research/%s/" .slug | relURL }}">
-            <span class="research-direction-number">{{ .number }}</span>
-            <h3>{{ .display_title }}</h3>
-            <span class="research-direction-link">View direction <span aria-hidden="true">→</span></span>
-          </a>
-        {{ end }}
-      </nav>
+  <nav class="research-section-nav" aria-label="Research directions" data-research-section-nav>
+    <div class="research-section-nav-inner research-editorial-shell">
+      <p>Research</p>
+      {{ range $programs }}
+        <a href="#{{ .id }}" data-research-section-link="{{ .id }}"><span>{{ .number }}</span>{{ .nav_title }}</a>
+      {{ end }}
+    </div>
+  </nav>
+
+  <div class="research-editorial-list">
+    <div class="research-editorial-shell">
+      {{ range $programs }}
+        {{ $program := . }}
+        {{ $topics := index site.Data.research_topics .id }}
+        <article class="research-editorial-program" id="{{ .id }}">
+          <header class="research-editorial-program-heading reveal">
+            <p><span>{{ .number }}</span>{{ .label }}</p>
+            <h2>{{ .display_title }}</h2>
+          </header>
+
+          <div class="research-editorial-copy reveal">
+            {{ range .paragraphs }}
+              <p>{{ . }}</p>
+            {{ end }}
+          </div>
+
+          <div class="research-topic-grid">
+            {{ range $topics }}
+              {{ if not .external_reference }}
+                {{ partial "research-topic-card.html" . }}
+              {{ end }}
+            {{ end }}
+          </div>
+
+          <p class="research-editorial-outputs reveal">
+            <strong>Related outputs:</strong>
+            {{ range .outputs }}
+              {{ $output := . }}
+              {{ range first 1 (where $publications "key" .key) }}
+                {{ $destination := .project | default .paper }}
+                <a href="{{ $destination }}" target="_blank" rel="noreferrer">[{{ $output.label }}]</a>
+              {{ end }}
+            {{ end }}
+          </p>
+        </article>
+      {{ end }}
+    </div>
+  </div>
+
+  <section class="research-editorial-footer">
+    <div class="research-editorial-shell reveal">
+      <p>For full abstracts, authors, figures, and project resources, visit the publication archive.</p>
+      <a class="button button-primary" href="{{ "publications/" | relURL }}">Browse all publications</a>
     </div>
   </section>
 {{ end }}
