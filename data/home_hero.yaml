@@ -12,10 +12,10 @@
 
 - image: images/hero/hkustgz-campus-aerial.jpg
   label: Aerial view of HKUST(GZ) and its surrounding environment
-  video: media/research/demos/guide-navigation-clean.mp4
+  video: media/research/demos/radarocc-snow.mp4
   position: center
   title: Robust Mobile Autonomy for Challenging and Safety-Critical Environments
-  lede: We combine 4D radar, vision, and robust learning so mobile systems can perceive, navigate, and recover under poor visibility, occlusion, and sparse sensing.
+  lede: We develop multimodal, learning-based autonomy for firefighting, disaster response, emergency rescue, and other environments where conventional robotic systems are most likely to fail.
   primary_label: Explore direction
   primary_url: research/#robust-autonomy
   secondary_label: Research overview
@@ -23,10 +23,10 @@
 
 - image: images/hero/hkustgz-core-sunset.jpg
   label: HKUST(GZ) core area at sunset
-  video: media/research/demos/thermohands.mp4
+  video: media/research/demos/m4human-capture.mp4
   position: center
-  title: Human Motion and Affect Sensing
-  lede: We use mmWave radar, thermal imaging, and multimodal learning to understand human motion and interaction while reducing reliance on conventional RGB cameras.
+  title: Human Motion and Physical Interaction Sensing
+  lede: We integrate radar, vision, sEMG, inertial, and force sensing to understand human motion, physical contact, interaction forces, and behavioral intent.
   primary_label: Explore direction
   primary_url: research/#human-sensing
   secondary_label: Research overview
@@ -37,7 +37,7 @@
   video: media/research/demos/palm-progress.mp4
   position: center
   title: Long-Horizon and Memory-Aware Mobile Manipulation
-  lede: We develop progress-aware and imitation-based policies for robots to reason about affordances, sequence actions, and recover during long-horizon manipulation.
+  lede: We integrate perception, memory, navigation, and manipulation so robots can preserve context, track task progress, and recover across extended multi-step tasks.
   primary_label: Explore direction
   primary_url: research/#embodied-autonomy
   secondary_label: Research overview
@@ -45,10 +45,10 @@
 
 - image: images/hero/hkustgz-campus-night.jpg
   label: HKUST(GZ) campus at night
-  video: media/research/demos/physical-realism.mp4
+  video: media/research/demos/radargen.mp4
   position: center
-  title: Scalable Robot Learning from Scene and Data Synthesis
-  lede: We build and evaluate physically grounded data, generative models, and efficient perception systems that transfer across sensors, environments, and robot platforms.
+  title: Scalable Robot Learning through Scene and Data Synthesis
+  lede: We turn real-world scenes and demonstrations into scalable virtual environments, interaction data, and learning pipelines that generalize across tasks, objects, and robot embodiments.
   primary_label: Explore direction
   primary_url: research/#scalable-physical-ai
   secondary_label: Research overview

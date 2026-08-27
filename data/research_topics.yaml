@@ -1,7 +1,7 @@
 robust-autonomy:
-  - title: Goal-Initialized Visual Navigation
-    summary: A legged robot preserves directional awareness from a one-time goal and navigates cluttered indoor and outdoor scenes using depth and proprioceptive history.
-    media_label: Field demo
+  - title: End-to-End Goal-Initialized Navigation
+    summary: GUIDE learns directional awareness from depth and proprioceptive history, enabling a legged robot to navigate cluttered environments without continuous goal updates or prior maps.
+    media_label: Real-world demo
     poster: images/publications/guide.jpg
     fit: contain
     demo: media/research/demos/guide-navigation.mp4
@@ -11,42 +11,40 @@ robust-autonomy:
     attribution: PI co-authored work · 2026
 
   - title: All-Weather 3D Occupancy with 4D Radar
-    summary: 4D imaging radar provides dense occupancy estimates through darkness, dusk, and snow, where camera- and LiDAR-based perception can degrade.
-    media_label: Demo video
+    summary: RadarOcc uses 4D imaging radar to estimate dense 3D occupancy in adverse weather and lighting conditions where camera- and LiDAR-based perception can degrade.
+    media_label: Adverse-weather demo
     poster: images/featured-radarocc.jpg
     fit: contain
     demo: media/research/demos/radarocc-snow.mp4
     source_asset: https://fangqiangding.com/publication/24-radarocc-neurips/resources/radarocc_gif_demo_snow.gif
     project_url: https://fangqiangding.com/publication/24-radarocc-neurips/
     link_label: Explore RadarOcc
-    attribution: PI-led work · NeurIPS 2024
+    attribution: PI first-authored work · NeurIPS 2024
 
   - title: 4D Radar Scene Flow and Motion Understanding
-    summary: Cross-modal supervision turns sparse 4D radar returns into scene flow, motion segmentation, and ego-motion for dynamic driving scenes.
-    media_label: Demo video
+    summary: Hidden Gems learns scene flow from sparse 4D radar through cross-modal supervision, supporting motion segmentation and ego-motion estimation in dynamic driving scenes.
+    media_label: Scene-flow demo
     poster: images/publications/hidden-gems.jpg
     fit: contain
     demo: media/research/demos/hidden-gems-scene-flow.mp4
     source_asset: https://fangqiangding.com/publication/23-cmflow-cvpr/gifs/scene-flow/gif-1.gif
     project_url: https://fangqiangding.com/publication/23-cmflow-cvpr/
     link_label: Explore Hidden Gems
-    attribution: PI-led work · CVPR 2023 Highlight
+    attribution: PI first-authored work · CVPR 2023 Highlight
 
-  - title: Agile Aerial Target Tracking
-    summary: Fast-Tracker predicts target motion and plans collision-free trajectories so a UAV can follow an agile person through cluttered outdoor scenes.
-    media_label: External native demo
-    poster: images/research/topics/fast-tracker.jpg
+  - title: Multimodal Backdraft Forecasting
+    summary: This work combines fire imagery with environmental sensor measurements to forecast backdraft risk in fire scenarios, connecting multimodal perception with safety-critical decision support.
+    media_label: Fire-safety research
+    image: images/publications/backdraft.jpg
+    alt: Backdraft forecasting research preview
     fit: contain
-    demo: media/research/demos/fast-tracker.mp4
-    source_asset: https://raw.githubusercontent.com/ZJU-FAST-Lab/Fast-tracker/main/figs/1.gif
-    project_url: https://github.com/ZJU-FAST-Lab/Fast-Tracker
-    link_label: Visit Fast-Tracker
-    attribution: External reference · ZJU FAST Lab
-    external_reference: true
+    project_url: https://doi.org/10.1016/j.engappai.2024.107939
+    link_label: View the paper
+    attribution: PI co-authored work · EAAI 2024
 
 human-sensing:
-  - title: Multimodal Human Motion Capture
-    summary: A synchronized benchmark aligns mmWave radar, RGB-D, and marker-based motion capture across daily, rehabilitation, and sports movements.
+  - title: Multimodal Human Motion Capture and Mesh Reconstruction
+    summary: M4Human synchronizes mmWave radar, RGB-D, and marker-based motion capture at scale, supporting radar-based reconstruction of articulated 3D human meshes.
     media_label: Dataset demo
     poster: images/featured-m4human.jpg
     fit: contain
@@ -56,31 +54,8 @@ human-sensing:
     link_label: Explore M4Human
     attribution: PI co-authored work · CVPR 2026
 
-  - title: Radar-Based Human Mesh Reconstruction
-    summary: Radar tensors and point clouds are translated into articulated 3D body meshes without relying on visible-light imagery.
-    media_label: Reconstruction demo
-    poster: images/publications/m4human.jpg
-    fit: contain
-    demo: media/research/demos/m4human-reconstruction.mp4
-    source_asset: https://fanjunqiao.github.io/M4Human-site/static/pred/1.mp4
-    project_url: https://fanjunqiao.github.io/M4Human-site/
-    link_label: View reconstruction
-    attribution: PI co-authored work · CVPR 2026
-
-  - title: Real-Time mmWave Skeletal Pose
-    summary: mmPose reconstructs and tracks articulated human skeletons from compact mmWave radar measurements without relying on visible-light imagery.
-    media_label: External native demo
-    poster: images/research/topics/mmpose.jpg
-    fit: contain
-    demo: media/research/demos/mmpose.mp4
-    source_asset: https://raw.githubusercontent.com/senguptaa/mmpose/master/Misc/mmpose.gif
-    project_url: https://github.com/senguptaa/mmpose
-    link_label: Visit mmPose
-    attribution: External reference · University of Arizona
-    external_reference: true
-
   - title: Thermal Egocentric Hand Pose
-    summary: Thermal imagery recovers articulated 3D hand pose during object interactions and remains effective under darkness, glare, and handwear.
+    summary: ThermoHands captures articulated 3D hand motion from egocentric thermal images during object interactions, including conditions affected by darkness, glare, and handwear.
     media_label: Annotation demo
     poster: images/publications/thermohands.jpg
     fit: contain
@@ -88,11 +63,21 @@ human-sensing:
     source_asset: https://thermohands.github.io/resources/annotation_2.mp4
     project_url: https://thermohands.github.io/
     link_label: Explore ThermoHands
-    attribution: PI-led work · SenSys 2025
+    attribution: PI first-authored work · SenSys 2025
+
+  - title: mmWave Radar Human Motion Sensing
+    summary: milliFlow estimates human scene flow from sparse mmWave radar point clouds, providing motion representations without relying on conventional visible-light imagery.
+    media_label: Research preview
+    image: images/featured-milliflow.jpg
+    alt: milliFlow human motion sensing research preview
+    fit: contain
+    project_url: https://arxiv.org/abs/2306.17010
+    link_label: View milliFlow
+    attribution: PI first-authored work · ECCV 2024
 
 embodied-autonomy:
-  - title: Progress-Aware Long-Horizon Control
-    summary: PALM jointly predicts robot actions and continuous subtask progress, preserving temporal context throughout multi-step manipulation.
+  - title: Progress-Aware Long-Horizon Manipulation
+    summary: PALM combines structured affordance reasoning with continuous subtask progress estimation to maintain coherent behavior across multi-step manipulation tasks.
     media_label: Real-robot demo
     poster: images/research/topics/palm-real-world-setup.jpg
     fit: contain
@@ -102,66 +87,9 @@ embodied-autonomy:
     link_label: Explore PALM
     attribution: PI co-authored work · CVPR 2026
 
-  - title: Structured Affordance Reasoning
-    summary: Global, local, spatial, and dynamic affordance cues help the policy anticipate relevant interactions and act coherently in visually cluttered scenes.
-    media_label: Robustness demo
-    poster: images/research/topics/palm-method.jpg
-    fit: contain
-    demo: media/research/demos/palm-affordance.mp4
-    source_asset: https://plan-lab.github.io/projects/palm/static/videos/visual-distraction.mp4
-    project_url: https://plan-lab.github.io/projects/palm/#method
-    link_label: View the method
-    attribution: PI co-authored work · CVPR 2026
-
-  - title: Robust Execution Under Change
-    summary: PALM maintains coherent long-horizon behavior when task objects are relocated and the scene configuration changes.
-    media_label: Robustness demo
-    poster: images/research/topics/palm-robustness.jpg
-    fit: contain
-    demo: media/research/demos/palm-relocation.mp4
-    source_asset: https://plan-lab.github.io/projects/palm/static/videos/random-relocation.mp4
-    project_url: https://plan-lab.github.io/projects/palm/#videos
-    link_label: Watch PALM rollouts
-    attribution: PI co-authored work · CVPR 2026
-
-  - title: Bimanual Mobile Imitation Learning
-    summary: Mobile ALOHA learns whole-body bimanual household skills from low-cost human teleoperation, extending imitation learning beyond tabletop manipulation.
-    media_label: External video reference
-    poster: images/research/topics/mobile-aloha.jpg
-    fit: contain
-    demo: media/research/demos/mobile-aloha.mp4
-    source_asset: https://mobile-aloha.github.io/static/images/preview.gif
-    project_url: https://mobile-aloha.github.io/
-    link_label: Visit Mobile ALOHA
-    attribution: External reference · Stanford
-    external_reference: true
-
 scalable-physical-ai:
-  - title: Physical Realism Failure Recognition
-    summary: Physics-IQ tests whether generated videos obey principles spanning mechanics, fluids, optics, thermodynamics, and magnetism.
-    media_label: External native demo
-    poster: images/research/topics/physical-realism.jpg
-    fit: contain
-    demo: media/research/demos/physical-realism.mp4
-    source_asset: https://physics-iq.github.io/assets/teaser.mp4
-    project_url: https://physics-iq.github.io/
-    link_label: Explore the benchmark
-    attribution: External reference · Google DeepMind & INSAIT
-    external_reference: true
-
-  - title: Physics Signals in Diffusion Noise
-    summary: Intermediate diffusion features contain signals that can predict physical plausibility and guide video generation toward more consistent motion.
-    media_label: Comparison demo
-    poster: images/publications/seeking-physics.jpg
-    fit: contain
-    demo: media/research/demos/seeking-physics.mp4
-    source_asset: https://thegreatestcj.github.io/Physics-in-Noise/static/videos/ours_53.mp4
-    project_url: https://thegreatestcj.github.io/Physics-in-Noise/
-    link_label: Explore Seeking Physics
-    attribution: PI co-authored work · 2026
-
-  - title: Camera-Conditioned Radar Generation
-    summary: RadarGen synthesizes realistic automotive radar point clouds from multi-view cameras while preserving geometry, motion, and occlusion structure.
+  - title: Camera-Conditioned Radar Data Generation
+    summary: RadarGen synthesizes automotive radar point clouds from multi-view cameras while preserving geometry, motion, and occlusion structure, illustrating a data-generation pipeline grounded in real scenes.
     media_label: Generation demo
     poster: images/publications/radargen.jpg
     fit: contain
@@ -170,15 +98,3 @@ scalable-physical-ai:
     project_url: https://radargen.github.io/
     link_label: Explore RadarGen
     attribution: PI co-authored work · ECCV 2026
-
-  - title: Gravity-Aligned 3D Geometry
-    summary: G3T predicts upright, gravity-aligned pointmaps so long-sequence 3D reconstruction starts from a physically meaningful coordinate frame.
-    media_label: External native demo
-    poster: images/research/topics/g3t-pointmaps.jpg
-    fit: contain
-    demo: media/research/demos/g3t-pointmaps.mp4
-    source_asset: https://g3t-paper.github.io/assets/videos/chunk_0.mp4
-    project_url: https://g3t-paper.github.io/
-    link_label: Explore G3T
-    attribution: External reference · Cornell
-    external_reference: true

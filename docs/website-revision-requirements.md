@@ -7,16 +7,16 @@
 1. **Robust Mobile Autonomy for Challenging and Safety-Critical Environments**
    复杂及安全关键环境中的移动机器人感知、导航与自主运行。
 
-2. **Human Motion and Affect Sensing**
-   人体运动、状态及情感感知，服务于数据采集、机器学习和人机交互。`Affect` 的最终拼写需要确认。
+2. **Human Motion and Physical Interaction Sensing**
+   人体运动与人–环境物理交互感知，覆盖多模态数据采集、状态估计、接触与力感知。
 
 3. **Long-Horizon and Memory-Aware Mobile Manipulation**
    面向长时序任务的移动操作，强调记忆、任务进度、跨任务能力和失败恢复。
 
-4. **Scalable Robot Learning from Scene and Data Synthesis**
-   通过场景和数据合成支持可扩展的机器人学习。该名称暂定，最终英文词序需要确认。
+4. **Scalable Robot Learning through Scene and Data Synthesis**
+   通过场景重建、仿真和数据合成支持可扩展的机器人学习。
 
-每个方向的详细介绍约 150 个英文单词，内容包括：
+四个方向的英文介绍以 `data/research.yaml` 中的实验室正式定稿为准，内容包括：
 
 - 应用价值；
 - 当前研究进展和未解决问题；

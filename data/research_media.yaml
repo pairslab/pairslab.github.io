@@ -1,11 +1,11 @@
 - id: robust-autonomy
   title: Robust Mobile Autonomy for Challenging and Safety-Critical Environments
-  poster: images/publications/guide.jpg
-  media_label: Goal-conditioned navigation
-  media_alt: Diagram of the GUIDE navigation policy combining visual depth, goal initialization, and proprioceptive history to control a quadruped in simulation.
+  poster: images/featured-radarocc.jpg
+  media_label: All-weather mobile perception
+  media_alt: RadarOcc pipeline showing 4D radar tensor processing, spherical feature encoding, and 3D occupancy decoding.
 
 - id: human-sensing
-  title: Human Motion and Affect Sensing
+  title: Human Motion and Physical Interaction Sensing
   poster: images/featured-m4human.jpg
   media_label: Multimodal human sensing
   media_alt: Diagram of the M4Human capture and annotation pipeline with mmWave radar, RGB-D cameras, motion capture, and reconstructed human meshes.
@@ -17,7 +17,7 @@
   media_alt: Diagram of the PALM policy with affordance prediction, multimodal inputs, an action-progress token, and its attention structure for robotic manipulation.
 
 - id: scalable-physical-ai
-  title: Scalable Robot Learning from Scene and Data Synthesis
-  poster: images/publications/physion-eval.jpg
-  media_label: Physics-grounded learning
-  media_alt: Physion-Eval overview showing physical video categories, human reasoning annotations, and the benchmark's physical-realism findings.
+  title: Scalable Robot Learning through Scene and Data Synthesis
+  poster: images/publications/radargen.jpg
+  media_label: Scene-grounded data generation
+  media_alt: RadarGen overview showing automotive radar point clouds synthesized from multi-view camera observations.

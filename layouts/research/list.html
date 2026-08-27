@@ -56,13 +56,17 @@
             {{ end }}
           </div>
 
-          <div class="research-topic-grid">
-            {{ range $topics }}
-              {{ if not .external_reference }}
+          {{ with $topics }}
+            <div class="research-work-heading reveal">
+              <p>Selected related work</p>
+              <span>Each item states its relationship to the PI and links to the original source.</span>
+            </div>
+            <div class="research-topic-grid{{ if eq (len .) 1 }} is-single{{ end }}">
+              {{ range . }}
                 {{ partial "research-topic-card.html" . }}
               {{ end }}
-            {{ end }}
-          </div>
+            </div>
+          {{ end }}
 
           <p class="research-editorial-outputs reveal">
             <strong>Related outputs:</strong>
