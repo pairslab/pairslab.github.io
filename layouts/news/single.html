@@ -9,10 +9,12 @@
       </div>
       <h1>{{ .Title }}</h1>
       <p class="news-article-summary">{{ .Params.summary | default .Description }}</p>
-      {{ with $newsImage }}
-        <figure class="news-article-cover">
-          <img src="{{ . }}" alt="{{ $.Title }}" decoding="async" fetchpriority="high">
-        </figure>
+      {{ if ne .Params.show_cover false }}
+        {{ with $newsImage }}
+          <figure class="news-article-cover">
+            <img src="{{ . }}" alt="{{ $.Title }}" decoding="async" fetchpriority="high">
+          </figure>
+        {{ end }}
       {{ end }}
     </div>
   </header>
