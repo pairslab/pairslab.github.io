@@ -1,4 +1,5 @@
 {{ define "main" }}
+  {{ $newsImage := partial "news-image-url.html" . }}
   <header class="news-article-hero">
     <div class="news-article-shell reveal">
       <a class="news-back-link" href="{{ "news/" | relURL }}"><span aria-hidden="true">←</span> All news</a>
@@ -7,7 +8,14 @@
         <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "January 2, 2006" }}</time>
       </div>
       <h1>{{ .Title }}</h1>
-      <p class="news-article-summary">{{ .Params.summary }}</p>
+      <p class="news-article-summary">{{ .Params.summary | default .Description }}</p>
+      {{ if ne .Params.show_cover false }}
+        {{ with $newsImage }}
+          <figure class="news-article-cover">
+            <img src="{{ . }}" alt="{{ $.Title }}" decoding="async" fetchpriority="high">
+          </figure>
+        {{ end }}
+      {{ end }}
     </div>
   </header>
 

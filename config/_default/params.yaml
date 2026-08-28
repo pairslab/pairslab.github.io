@@ -6,7 +6,7 @@
 # Appearance
 
 assets:
-  version: '20260828-research-copy-v2'
+  version: '20260828-news-images-v1'
 
 appearance:
   theme_day: minimal

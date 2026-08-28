@@ -3,6 +3,7 @@ title: PAIRS Lab starts at HKUST(GZ)
 date: 2026-07-21
 category: Lab
 summary: Fangqiang Ding joined the Robotics and Autonomous Systems Thrust as a Tenure-Track Assistant Professor and founded PAIRS Lab.
+image: cover.jpg
 external_url: https://fangqiangding.com/group/
 external_label: Visit the PAIRS Lab group page
 ---

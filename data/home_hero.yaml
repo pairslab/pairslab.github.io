@@ -23,8 +23,8 @@
 
 - image: images/hero/hkustgz-core-sunset.jpg
   label: HKUST(GZ) core area at sunset
-  video: media/research/demos/m4human-capture.mp4
-  position: center
+  video: media/research/demos/thermohands.mp4
+  position: 55% 45%
   title: Human Motion and Physical Interaction Sensing
   lede: We integrate radar, vision, sEMG, inertial, and force sensing to understand human motion, physical contact, interaction forces, and behavioral intent.
   primary_label: Explore direction

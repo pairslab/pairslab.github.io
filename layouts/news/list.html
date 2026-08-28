@@ -45,14 +45,24 @@
 
       <div class="news-list news-archive-list">
         {{ range $news }}
-          <a class="news-row reveal"
+          {{ $newsPage := . }}
+          {{ $newsImage := partial "news-image-url.html" . }}
+          <a class="news-row{{ if $newsImage }} has-image{{ end }} reveal"
             href="{{ .RelPermalink }}"
             data-news-item
             data-year="{{ .Date.Format "2006" }}"
             data-category="{{ .Params.category }}">
+            {{ with $newsImage }}
+              <span class="news-row-media">
+                <img src="{{ . }}" alt="{{ $newsPage.Title }}" loading="lazy" decoding="async">
+              </span>
+            {{ end }}
             <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Jan 02 · 2006" }}</time>
             <span class="news-label">{{ .Params.category }}</span>
-            <div><h2>{{ .Title }}</h2><p>{{ .Params.summary }}</p></div>
+            <div class="news-row-copy">
+              <h2>{{ .Title }}</h2>
+              <p>{{ .Params.summary | default .Description | default (.Summary | plainify) }}</p>
+            </div>
             <span class="news-arrow" aria-hidden="true">→</span>
           </a>
         {{ end }}

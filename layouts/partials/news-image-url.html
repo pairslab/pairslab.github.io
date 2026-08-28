@@ -1,0 +1,10 @@
+{{- $imageURL := "" -}}
+{{- with .Params.image -}}
+  {{- $imagePath := . -}}
+  {{- with $.Resources.GetMatch $imagePath -}}
+    {{- $imageURL = .RelPermalink -}}
+  {{- else -}}
+    {{- $imageURL = $imagePath | relURL -}}
+  {{- end -}}
+{{- end -}}
+{{- return $imageURL -}}
