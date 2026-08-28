@@ -50,7 +50,7 @@
             <h2>{{ .display_title }}</h2>
           </header>
 
-          <div class="research-editorial-copy reveal">
+          <div class="research-editorial-copy{{ if eq (len .paragraphs) 1 }} is-single{{ end }} reveal">
             {{ range .paragraphs }}
               <p>{{ . }}</p>
             {{ end }}

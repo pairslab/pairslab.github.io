@@ -485,6 +485,7 @@ button {
 
 .hero-title {
   max-width: 1000px;
+  margin-inline: auto;
   font-size: clamp(2.1rem, 3.7vw, 3.8rem);
   line-height: 1.08;
   white-space: normal;
@@ -1200,9 +1201,14 @@ button {
   line-height: 1.78;
 }
 
-.research-editorial-copy > p:only-child {
-  max-width: 96ch;
-  grid-column: 1 / -1;
+.research-editorial-copy.is-single {
+  display: block;
+  column-count: 2;
+  column-gap: 28px;
+}
+
+.research-editorial-copy.is-single > p {
+  max-width: none;
 }
 
 .research-work-heading {
@@ -3035,6 +3041,10 @@ button {
   .research-editorial-copy {
     gap: 16px;
     margin-bottom: 30px;
+  }
+
+  .research-editorial-copy.is-single {
+    column-count: 1;
   }
 
   .research-topic-copy {
