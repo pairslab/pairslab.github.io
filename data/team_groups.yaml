@@ -4,18 +4,18 @@
 
 - label: Research postgraduates
   key: mphil
-  title: MPhil Students
+  title: MPhil/MSc Students
 
 - label: Research staff
   key: ra
   title: Research Assistants
 
-- label: Visiting collaborators
-  key: visiting
-  title: Visiting Students
-  show_when_empty: true
-
 - label: Remote participants
   key: intern
   title: Interns
+  show_when_empty: true
+
+- label: Visiting collaborators
+  key: visiting
+  title: Visiting Students
   show_when_empty: true
