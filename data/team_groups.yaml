@@ -19,3 +19,7 @@
   key: visiting
   title: Visiting Students
   show_when_empty: true
+
+- label: Robotic teammates
+  key: robot
+  title: Robot Members

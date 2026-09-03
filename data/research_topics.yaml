@@ -32,15 +32,15 @@ robust-autonomy:
     link_label: Explore Hidden Gems
     attribution: PI first-authored work · CVPR 2023 Highlight
 
-  - title: Multimodal Backdraft Forecasting
-    summary: This work combines fire imagery with environmental sensor measurements to forecast backdraft risk in fire scenarios, connecting multimodal perception with safety-critical decision support.
-    media_label: Fire-safety research
-    image: images/publications/backdraft.jpg
-    alt: Backdraft forecasting research preview
+  - title: "RaTrack: Moving Object Detection and Tracking with 4D Radar"
+    summary: RaTrack detects and tracks moving objects from sparse, noisy 4D radar point clouds by combining motion segmentation and clustering with motion estimation for robust dynamic-scene perception.
+    media_label: 4D radar tracking
+    poster: images/publications/ratrack.jpg
     fit: contain
-    project_url: https://doi.org/10.1016/j.engappai.2024.107939
-    link_label: View the paper
-    attribution: PI co-authored work · EAAI 2024
+    demo: media/research/demos/RaTrack.mp4
+    project_url: https://arxiv.org/abs/2309.09737
+    link_label: View RaTrack
+    attribution: PI co-first-authored work · ICRA 2024
 
 human-sensing:
   - title: Multimodal Human Motion Capture and Mesh Reconstruction

@@ -90,6 +90,7 @@
             </div>
             <div class="research-media-copy">
               <h3>{{ $direction.display_title }}</h3>
+              <a class="research-media-link" href="{{ printf "research/#%s" $direction.id | relURL }}"><span class="research-media-link-label">Explore direction</span><span class="research-media-link-arrow" aria-hidden="true">↗</span></a>
             </div>
           </article>
         {{ end }}

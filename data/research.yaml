@@ -10,12 +10,48 @@
   outputs:
     - key: guide
       label: GUIDE · 2026
+    - key: hyperdet
+      label: HyperDet · 2026
+    - key: wavelet-radar
+      label: Wavelet Radar-Camera Fusion · 2026
+    - key: score-detr
+      label: SCORE-DETR · CEA 2025
+    - key: rss-pioneers
+      label: Robust Spatial Perception · RSS Pioneers 2025
     - key: radarocc
       label: RadarOcc · NeurIPS 2024
-    - key: hidden-gems
-      label: Hidden Gems · CVPR 2023
     - key: backdraft
       label: Backdraft Forecasting · EAAI 2024
+    - key: ratrack
+      label: RaTrack · ICRA 2024
+    - key: hidden-gems
+      label: Hidden Gems · CVPR 2023
+    - key: all-day-tracking
+      label: All-Day UAV Tracking · TMC 2023
+    - key: raflow
+      label: RaFlow · RA-L 2022
+    - key: mrcf
+      label: MRCF · TIE 2022
+    - key: ad2attack
+      label: Ad2Attack · ICRA 2022
+    - key: dcf-review
+      label: DCF Tracking Review · GRSM 2022
+    - key: dynamic-regression
+      label: Dynamic Regression · EAAI 2021
+    - key: adtrack
+      label: ADTrack · ICRA 2021
+    - key: srecf
+      label: SRECF · TMM 2021
+    - key: mscf
+      label: MSCF · ICRA 2021
+    - key: autotrack
+      label: AutoTrack · CVPR 2020
+    - key: jsar
+      label: Failure Recovery for UAV Tracking · IROS 2020
+    - key: dr2track
+      label: DR2Track · IROS 2020
+    - key: amcf
+      label: Augmented Memory CF · IROS 2020
 
 - id: human-sensing
   number: "02"
@@ -50,6 +86,8 @@
   outputs:
     - key: palm
       label: PALM · CVPR 2026
+    - key: dexterous-survey
+      label: Dexterous Manipulation Survey · T-ASE 2025
 
 - id: scalable-physical-ai
   number: "04"
@@ -63,5 +101,11 @@
     - >-
       This research addresses the high cost of real-world robot data collection, the limited diversity of available environments and tasks, and the scarcity of long-tail interaction data. We investigate the relationships among scene semantics, physical properties, task objectives, and robot behavior. By closing the loop from real-world perception and scene synthesis to large-scale data generation, policy learning, and physical deployment, we seek to improve generalization to unseen objects, environments, and tasks. This research provides scalable data and environment infrastructure for general-purpose robotic manipulation, embodied intelligence, and robot foundation models.
   outputs:
+    - key: physion-eval
+      label: Physion-Eval · 2026
+    - key: seeking-physics
+      label: Seeking Physics in Diffusion Noise · 2026
     - key: radargen
       label: RadarGen · ECCV 2026
+    - key: apto
+      label: APTO · ASP-DAC 2025
