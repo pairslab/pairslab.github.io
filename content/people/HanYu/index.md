@@ -7,7 +7,7 @@ role: Research Assistant
 position: Research Assistant
 affiliation: PAIRS Lab, HKUST(GZ)
 institution: SCUT
-period:
+period: 2026–Present
 image: portrait.jpg
 links:
   - label: Email
