@@ -54,10 +54,12 @@
                 {{ range $members }}
                   {{ $member := . }}
                   {{ $imageURL := partial "member-image.html" (dict "page" . "src" .Params.image) }}
+                  {{ $imageScale := .Params.card_image_scale | default 1 }}
+                  {{ $imagePosition := .Params.card_image_position | default "center top" }}
                   <article class="member-card">
                     <a class="member-card-link" href="{{ .RelPermalink }}" aria-label="View {{ .Title }}'s profile">
                       <div class="member-photo">
-                        <img src="{{ $imageURL }}" alt="{{ .Title }}" loading="lazy">
+                        <img src="{{ $imageURL }}" alt="{{ .Title }}" loading="lazy" style="{{ printf "--member-image-scale: %v; --member-image-position: %s;" $imageScale $imagePosition | safeCSS }}">
                       </div>
                       <h3>{{ .Title }}</h3>
                       {{ if or .Params.period .Params.card_interests }}

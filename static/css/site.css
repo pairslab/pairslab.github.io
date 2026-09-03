@@ -483,6 +483,11 @@ button {
   white-space: nowrap;
 }
 
+/* Make the lab-introduction slide slightly more prominent than research slides. */
+.hero h1 {
+  font-size: clamp(2.65rem, 4.5vw, 4.25rem);
+}
+
 .hero-title {
   max-width: 1000px;
   margin-inline: auto;
@@ -497,6 +502,10 @@ button {
   color: #d7e5ee;
   font-size: clamp(1.05rem, 1.45vw, 1.3rem);
   line-height: 1.6;
+}
+
+.hero-copy:first-child .hero-lede {
+  font-size: clamp(1.15rem, 1.65vw, 1.45rem);
 }
 
 .hero-actions {
@@ -633,6 +642,7 @@ button {
 
 .research-media-copy {
   display: flex;
+  flex: 1;
   min-height: 138px;
   padding: 28px 32px;
   justify-content: center;
@@ -655,16 +665,74 @@ button {
   line-height: 1.72;
 }
 
-.research-media-copy > a {
-  display: inline-flex;
-  gap: 8px;
+.research-media-link {
+  position: relative;
+  display: flex;
+  width: 100%;
+  gap: 16px;
   align-items: center;
-  align-self: flex-start;
+  justify-content: space-between;
   margin-top: auto;
-  padding-top: 24px;
-  color: var(--blue);
+  padding-top: 18px;
+  color: var(--ink-strong);
   font-size: 0.86rem;
   font-weight: 700;
+  letter-spacing: 0.02em;
+  line-height: 1.2;
+  transition: color 180ms ease;
+}
+
+.research-media-link::before {
+  position: absolute;
+  top: 4px;
+  right: 0;
+  left: 0;
+  height: 1px;
+  background: var(--line);
+  content: "";
+  transition: background-color 180ms ease;
+}
+
+.research-media-link-label {
+  transition: color 180ms ease, transform 180ms ease;
+}
+
+.research-media-link-arrow {
+  display: grid;
+  width: 32px;
+  height: 32px;
+  flex: 0 0 32px;
+  place-items: center;
+  color: var(--blue);
+  border: 1px solid #b8d5e8;
+  border-radius: 50%;
+  background: var(--bg-blue);
+  font-size: 1rem;
+  transition: color 180ms ease, border-color 180ms ease, background-color 180ms ease, transform 180ms ease;
+}
+
+.research-media-link:hover,
+.research-media-link:focus-visible {
+  color: var(--ink-strong);
+}
+
+.research-media-link:hover::before,
+.research-media-link:focus-visible::before {
+  background: #9bbdd3;
+}
+
+.research-media-link:hover .research-media-link-label,
+.research-media-link:focus-visible .research-media-link-label {
+  color: var(--blue);
+  transform: translateX(4px);
+}
+
+.research-media-link:hover .research-media-link-arrow,
+.research-media-link:focus-visible .research-media-link-arrow {
+  color: var(--white);
+  border-color: var(--blue);
+  background: var(--blue);
+  transform: translateX(4px);
 }
 
 .selected-work {
@@ -2120,7 +2188,9 @@ button {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center top;
+  object-position: var(--member-image-position, center top);
+  transform: scale(var(--member-image-scale, 1));
+  transform-origin: center;
 }
 
 .member-card h3 {
@@ -2182,7 +2252,9 @@ button {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center top;
+  object-position: var(--member-image-position, center top);
+  transform: scale(var(--member-image-scale, 1));
+  transform-origin: center;
 }
 
 .member-simple-identity h1 {
@@ -2287,6 +2359,13 @@ button {
   border-bottom: 1px solid var(--line);
   color: var(--body);
   font-size: 0.88rem;
+}
+
+.member-simple-projects p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.92rem;
+  line-height: 1.7;
 }
 
 /* PI profile */
@@ -2752,6 +2831,10 @@ button {
     font-size: clamp(1.7rem, 5vw, 2.3rem);
   }
 
+  .hero h1 {
+    font-size: clamp(1.85rem, 5.4vw, 2.45rem);
+  }
+
   .mission-simple,
   .join-panel {
     gap: 32px;
@@ -2877,6 +2960,10 @@ button {
     letter-spacing: -0.035em;
   }
 
+  .hero h1 {
+    font-size: clamp(1.18rem, 5.4vw, 1.82rem);
+  }
+
   .hero-copy-stack {
     min-height: 420px;
   }
@@ -2885,6 +2972,10 @@ button {
     max-width: 340px;
     margin-top: 14px;
     font-size: 0.92rem;
+  }
+
+  .hero-copy:first-child .hero-lede {
+    font-size: 1rem;
   }
 
   .hero-actions {
@@ -2919,8 +3010,8 @@ button {
     padding: 26px 24px 28px;
   }
 
-  .research-media-copy > a {
-    margin-top: 8px;
+  .research-media-link {
+    margin-top: 18px;
   }
 
   .featured-pub {
@@ -3175,6 +3266,10 @@ button {
   .hero h1,
   .hero-title {
     font-size: clamp(1.05rem, 5.1vw, 1.3rem);
+  }
+
+  .hero h1 {
+    font-size: clamp(1.1rem, 5.35vw, 1.42rem);
   }
 
   .publication-item {

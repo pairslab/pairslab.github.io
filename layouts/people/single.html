@@ -1,10 +1,12 @@
 {{ define "main" }}
   {{ $imageURL := partial "member-image.html" (dict "page" . "src" .Params.image) }}
+  {{ $imageScale := .Params.card_image_scale | default 1 }}
+  {{ $imagePosition := .Params.card_image_position | default "center top" }}
   <section class="member-simple-profile">
     <div class="section-shell member-simple-grid">
       <aside class="member-simple-identity">
         <div class="member-simple-photo">
-          <img src="{{ $imageURL }}" alt="Portrait of {{ .Title }}" loading="eager">
+          <img src="{{ $imageURL }}" alt="Portrait of {{ .Title }}" loading="eager" style="{{ printf "--member-image-scale: %v; --member-image-position: %s;" $imageScale $imagePosition | safeCSS }}">
         </div>
         <h1>{{ .Title }}</h1>
         <p class="member-simple-position">{{ .Params.position }}<br>{{ .Params.affiliation }}</p>
@@ -14,12 +16,28 @@
       <div class="member-simple-content">
         <div class="member-simple-biography">{{ .Content }}</div>
 
-        {{ with .Params.research_interests }}
+        {{ with .Params.abilities }}
           <section class="member-simple-interests">
-            <h2>Interests</h2>
+            <h2>Abilities</h2>
             <ul>
               {{ range . }}<li>{{ .title }}</li>{{ end }}
             </ul>
+          </section>
+        {{ else }}
+          {{ with .Params.research_interests }}
+            <section class="member-simple-interests">
+              <h2>Interests</h2>
+              <ul>
+                {{ range . }}<li>{{ .title }}</li>{{ end }}
+              </ul>
+            </section>
+          {{ end }}
+        {{ end }}
+
+        {{ with .Params.projects_note }}
+          <section class="member-simple-interests member-simple-projects">
+            <h2>Participating Projects</h2>
+            <p>{{ . }}</p>
           </section>
         {{ end }}
       </div>
