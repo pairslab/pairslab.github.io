@@ -2193,6 +2193,16 @@ button {
   transform-origin: center;
 }
 
+.member-category-infra .member-photo {
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: var(--white);
+}
+
+.member-category-infra .member-photo img {
+  object-fit: contain;
+}
+
 .member-card h3 {
   margin: 22px 0 4px;
   color: var(--ink-strong);
@@ -2255,6 +2265,16 @@ button {
   object-position: var(--member-image-position, center top);
   transform: scale(var(--member-image-scale, 1));
   transform-origin: center;
+}
+
+.member-simple-profile.is-infrastructure .member-simple-photo {
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: var(--white);
+}
+
+.member-simple-profile.is-infrastructure .member-simple-photo img {
+  object-fit: contain;
 }
 
 .member-simple-identity h1 {

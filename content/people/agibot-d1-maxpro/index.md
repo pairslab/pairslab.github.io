@@ -2,7 +2,7 @@
 title: AgiBot D1 MaxPro
 description: AgiBot D1 MaxPro is a quadruped research platform at PAIRS Lab, HKUST(GZ).
 group: robot
-weight: 30
+weight: 40
 role: Quadruped Research Platform
 position: Quadruped Research Platform
 affiliation: PAIRS Lab, HKUST(GZ)

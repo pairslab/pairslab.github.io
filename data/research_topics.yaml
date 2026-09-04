@@ -43,6 +43,14 @@ robust-autonomy:
     attribution: PI co-first-authored work · ICRA 2024
 
 human-sensing:
+  - title: Wrist-Worn Muscle-Activity Sensing
+    summary: This lab demonstration shows a wrist-worn sensing setup collecting multichannel surface electromyography and inertial signals during hand gestures. The prototype supports our exploration of compact wearable measurements that connect muscle activation with motion and physical interaction.
+    media_label: Lab demonstration
+    poster: images/research/topics/wrist-semg-collection.png
+    demo: media/research/demos/wrist-semg-collection.mp4
+    fit: contain
+    attribution: Ongoing lab prototype · Not linked to a publication
+
   - title: Multimodal Human Motion Capture and Mesh Reconstruction
     summary: M4Human synchronizes mmWave radar, RGB-D, and marker-based motion capture at scale, supporting radar-based reconstruction of articulated 3D human meshes.
     media_label: Dataset demo
@@ -87,7 +95,25 @@ embodied-autonomy:
     link_label: Explore PALM
     attribution: PI co-authored work · CVPR 2026
 
+  - title: Sequential Block Stacking with a Single Arm
+    summary: This lab demonstration follows a single robotic arm as it places blocks in sequence. The setup provides a focused testbed for perception, action sequencing, task-state tracking, and reliable execution as we develop longer and more adaptive manipulation behaviors.
+    media_label: Lab demonstration
+    poster: images/research/topics/single-arm-block-stacking.png
+    demo: media/research/demos/single-arm-block-stacking.mp4
+    fit: contain
+    attribution: Ongoing lab prototype · Not linked to a publication
+
 scalable-physical-ai:
+  - title: Seeking Physics in Diffusion Noise
+    summary: Seeking Physics uncovers physical-plausibility signals in intermediate diffusion features, then uses a lightweight verifier to select and guide denoising trajectories toward more physically consistent generated videos.
+    media_label: Physics-aware generation
+    poster: images/publications/seeking-physics.jpg
+    fit: contain
+    demo: media/research/demos/seeking-physics.m4v
+    project_url: https://thegreatestcj.github.io/Physics-in-Noise/
+    link_label: Explore Seeking Physics
+    attribution: PI co-authored work · 2026
+
   - title: Camera-Conditioned Radar Data Generation
     summary: RadarGen synthesizes automotive radar point clouds from multi-view cameras while preserving geometry, motion, and occlusion structure, illustrating a data-generation pipeline grounded in real scenes.
     media_label: Generation demo

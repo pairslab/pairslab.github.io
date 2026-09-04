@@ -2,11 +2,12 @@
   {{ $imageURL := partial "member-image.html" (dict "page" . "src" .Params.image) }}
   {{ $imageScale := .Params.card_image_scale | default 1 }}
   {{ $imagePosition := .Params.card_image_position | default "center top" }}
-  <section class="member-simple-profile">
+  {{ $capabilitiesTitle := .Params.capabilities_title | default "Abilities" }}
+  <section class="member-simple-profile{{ if eq .Params.group "infra" }} is-infrastructure{{ end }}">
     <div class="section-shell member-simple-grid">
       <aside class="member-simple-identity">
         <div class="member-simple-photo">
-          <img src="{{ $imageURL }}" alt="Portrait of {{ .Title }}" loading="eager" style="{{ printf "--member-image-scale: %v; --member-image-position: %s;" $imageScale $imagePosition | safeCSS }}">
+          <img src="{{ $imageURL }}" alt="{{ if eq .Params.group "infra" }}Product image of{{ else }}Portrait of{{ end }} {{ .Title }}" loading="eager" style="{{ printf "--member-image-scale: %v; --member-image-position: %s;" $imageScale $imagePosition | safeCSS }}">
         </div>
         <h1>{{ .Title }}</h1>
         <p class="member-simple-position">{{ .Params.position }}<br>{{ .Params.affiliation }}</p>
@@ -18,7 +19,7 @@
 
         {{ with .Params.abilities }}
           <section class="member-simple-interests">
-            <h2>Abilities</h2>
+            <h2>{{ $capabilitiesTitle }}</h2>
             <ul>
               {{ range . }}<li>{{ .title }}</li>{{ end }}
             </ul>

@@ -2,7 +2,7 @@
 title: ARX AC One
 description: ARX AC One is a dual-arm research platform at PAIRS Lab, HKUST(GZ).
 group: robot
-weight: 20
+weight: 30
 role: Dual-Arm Research Platform
 position: Dual-Arm Research Platform
 affiliation: PAIRS Lab, HKUST(GZ)

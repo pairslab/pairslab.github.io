@@ -1,7 +1,7 @@
 <article class="research-topic-card{{ if .external_reference }} is-external{{ end }}">
   <div class="research-topic-media is-{{ .fit | default "contain" }}">
     {{ with .demo }}
-      <video data-research-loop autoplay muted loop playsinline preload="none" poster="{{ $.poster | relURL }}" aria-hidden="true">
+      <video data-research-loop autoplay muted loop playsinline preload="none"{{ with $.poster }} poster="{{ . | relURL }}"{{ end }} aria-hidden="true">
         <source data-src="{{ . | relURL }}" type="video/mp4">
       </video>
     {{ else }}
@@ -14,6 +14,8 @@
     <p class="research-topic-attribution">{{ .attribution }}</p>
     <h3>{{ .title }}</h3>
     <p>{{ .summary }}</p>
-    <a href="{{ .project_url }}" target="_blank" rel="noreferrer">{{ .link_label }} <span aria-hidden="true">↗</span></a>
+    {{ with .project_url }}
+      <a href="{{ . }}" target="_blank" rel="noreferrer">{{ $.link_label }} <span aria-hidden="true">↗</span></a>
+    {{ end }}
   </div>
 </article>
