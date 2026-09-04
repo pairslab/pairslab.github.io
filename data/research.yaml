@@ -65,6 +65,8 @@
     - >-
       By moving beyond motion-only representations, we seek to characterize the relationships among movement, muscle activation, physical contact, and force during human motion and dexterous manipulation. These physically grounded representations provide richer and more complete information about human behavior for robot manipulation learning, with broader applications in human–computer interaction and rehabilitation.
   outputs:
+    - key: mld
+      label: AI-based Motor Assessment · TNSRE 2026
     - key: m4human
       label: M4Human · CVPR 2026
     - key: thermohands

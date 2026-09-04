@@ -1,3 +1,15 @@
+- key: mld
+  title: AI-based Digital Assessment of Gross Motor Function in Metachromatic Leukodystrophy
+  authors: "Fangqiang Ding, Jiangpeng He, Javier Gervas-Arruga, David Whiteman, Hermano Igo Krebs"
+  venue: IEEE Transactions on Neural Systems and Rehabilitation Engineering
+  year: 2026
+  kind: Journal
+  topic: Human Motion & Interaction
+  featured: true
+  image: images/publications/mld.jpg
+  paper: https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=11657452
+  project: https://ieeexplore.ieee.org/document/11657452
+
 - key: guide
   title: "GUIDE: Goal-Initialized Directional Understanding for End-to-End Visual Navigation"
   authors: "Liang Wang, Jin Jin, Kanzhong Yao, Yibin Wu, Fangqiang Ding, Jin Wang, Jun Wu, Zhe Sun, Qiuguo Zhu"

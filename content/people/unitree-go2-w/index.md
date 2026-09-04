@@ -1,8 +1,8 @@
 ---
-title: Unitree Go2-W
+title: Unitree No. 2
 description: Unitree Go2-W is a wheeled-quadruped research platform at PAIRS Lab, HKUST(GZ).
 group: robot
-weight: 40
+weight: 20
 role: Wheeled-Quadruped Research Platform
 position: Wheeled-Quadruped Research Platform
 affiliation: PAIRS Lab, HKUST(GZ)
@@ -24,4 +24,4 @@ card_interests:
 projects_note: Projects will be added soon.
 ---
 
-Go2-W is the lab's teammate who refuses to choose between walking and rolling. Its wheel-legged design helps us explore hybrid locomotion, terrain adaptation, autonomous navigation, and fast, robust mobility across mixed environments.
+Unitree Go2-W is the lab's teammate who refuses to choose between walking and rolling. Its wheel-legged design helps us explore hybrid locomotion, terrain adaptation, autonomous navigation, and fast, robust mobility across mixed environments.

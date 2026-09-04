@@ -23,3 +23,9 @@
 - label: Robotic teammates
   key: robot
   title: Robot Members
+
+- label: Sensing and data acquisition
+  key: infra
+  title: Research Infrastructure
+  item_singular: device
+  item_plural: devices

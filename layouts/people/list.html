@@ -40,14 +40,16 @@
       {{ range site.Data.team_groups }}
         {{ $members := where $peoplePage.RegularPages "Params.group" .key }}
         {{ $members = $members.ByWeight }}
+        {{ $itemSingular := .item_singular | default "member" }}
+        {{ $itemPlural := .item_plural | default "members" }}
         {{ if or $members .show_when_empty }}
-          <section class="member-category">
+          <section class="member-category member-category-{{ .key }}">
             <div class="member-category-heading">
               <div>
                 <span class="section-kicker">{{ .label }}</span>
                 <h2>{{ .title }}</h2>
               </div>
-              <span>{{ len $members }} {{ if eq (len $members) 1 }}member{{ else }}members{{ end }}</span>
+              <span>{{ len $members }} {{ if eq (len $members) 1 }}{{ $itemSingular }}{{ else }}{{ $itemPlural }}{{ end }}</span>
             </div>
             {{ if $members }}
               <div class="member-grid">
@@ -57,7 +59,7 @@
                   {{ $imageScale := .Params.card_image_scale | default 1 }}
                   {{ $imagePosition := .Params.card_image_position | default "center top" }}
                   <article class="member-card">
-                    <a class="member-card-link" href="{{ .RelPermalink }}" aria-label="View {{ .Title }}'s profile">
+                    <a class="member-card-link" href="{{ .RelPermalink }}" aria-label="View {{ .Title }} profile">
                       <div class="member-photo">
                         <img src="{{ $imageURL }}" alt="{{ .Title }}" loading="lazy" style="{{ printf "--member-image-scale: %v; --member-image-position: %s;" $imageScale $imagePosition | safeCSS }}">
                       </div>
