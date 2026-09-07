@@ -31,7 +31,7 @@ robust-autonomy:
         label: Scene Flow
       - src: media/research/demos/hidden-gems-motion-seg.mp4
         poster: images/research/topics/hidden-gems-motion-seg.jpg
-        label: Motion Segmentation
+        label: Segmentation
       - src: media/research/demos/hidden-gems-ego-motion.mp4
         poster: images/research/topics/hidden-gems-ego-motion.jpg
         label: Ego-Motion

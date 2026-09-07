@@ -1375,7 +1375,7 @@ button {
   display: grid;
   min-height: 0;
   background: var(--bg-alt);
-  grid-template-columns: clamp(66px, 17%, 96px) minmax(0, 1fr);
+  grid-template-columns: clamp(84px, 19%, 108px) minmax(0, 1fr);
 }
 
 .research-topic-media-slot-label {
