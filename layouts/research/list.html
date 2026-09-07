@@ -31,12 +31,24 @@
     </div>
   </section>
 
-  <nav class="research-section-nav" aria-label="Research directions" data-research-section-nav>
-    <div class="research-section-nav-inner research-editorial-shell">
-      <p>Research</p>
+  <nav class="research-choices" id="research-directions" aria-label="Research directions">
+    <div class="research-editorial-shell">
+      <p class="section-kicker">Research</p>
+      <button class="research-demo-toggle" type="button" hidden>Pause previews</button>
+      <div class="research-choice-grid">
       {{ range $programs }}
-        <a href="#{{ .id }}" data-research-section-link="{{ .id }}"><span>{{ .number }}</span>{{ .nav_title }}</a>
+        <a class="research-choice" href="#{{ .id }}" data-research-choice="{{ .id }}" aria-controls="{{ .id }}">
+          {{ range first 1 (index site.Data.research_topics .id) }}
+            <video class="research-choice-video" muted loop playsinline preload="none" poster="{{ .poster | relURL }}" aria-hidden="true">
+              <source data-src="{{ .demo | relURL }}" type="video/mp4">
+            </video>
+          {{ end }}
+          <span class="research-choice-number">{{ .number }}</span>
+          <span class="research-choice-title">{{ .display_title }}</span>
+          <span class="research-choice-arrow" aria-hidden="true">↘</span>
+        </a>
       {{ end }}
+      </div>
     </div>
   </nav>
 
@@ -46,6 +58,7 @@
         {{ $program := . }}
         {{ $topics := index site.Data.research_topics .id }}
         <article class="research-editorial-program" id="{{ .id }}">
+          <a class="research-back-to-grid" href="#research-directions">↑ Research directions</a>
           <header class="research-editorial-program-heading reveal">
             <p><span>{{ .number }}</span>{{ .label }}</p>
             <h2>{{ .display_title }}</h2>
@@ -90,4 +103,6 @@
       <a class="button button-primary" href="{{ "publications/" | relURL }}">Browse all publications</a>
     </div>
   </section>
+  {{ $researchScript := resources.Get "js/research.js" | fingerprint }}
+  <script src="{{ $researchScript.RelPermalink }}" defer></script>
 {{ end }}

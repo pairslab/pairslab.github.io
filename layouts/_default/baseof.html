@@ -25,6 +25,10 @@
     <link rel="manifest" href="{{ "site.webmanifest" | relURL }}">
     <link rel="stylesheet" href="{{ "brand/tokens/pairs-brand-tokens.css" | relURL }}">
     <link rel="stylesheet" href="{{ printf "%s?v=%s" ("css/site.css" | relURL) $assetVersion }}">
+    {{ if and .IsSection (eq .Section "research") }}
+      {{ $researchStyle := resources.Get "css/research.css" | fingerprint }}
+      <link rel="stylesheet" href="{{ $researchStyle.RelPermalink }}">
+    {{ end }}
     <script>
       (function () {
         document.documentElement.classList.add("js");
