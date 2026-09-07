@@ -6,7 +6,7 @@
 # Appearance
 
 assets:
-  version: '20260908-how-to-apply-v1'
+  version: '20260908-apply-links-v2'
 
 appearance:
   theme_day: minimal

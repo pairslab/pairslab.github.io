@@ -2580,27 +2580,6 @@ button {
   background: var(--white);
 }
 
-.section-heading-aside {
-  display: flex;
-  gap: 24px;
-  flex-wrap: wrap;
-  align-items: center;
-}
-
-.section-heading-link {
-  display: inline-flex;
-  gap: 7px;
-  align-items: center;
-  color: var(--blue);
-  font-size: 0.86rem;
-  font-weight: 700;
-  white-space: nowrap;
-}
-
-.section-heading-link:hover {
-  color: var(--blue-hover);
-}
-
 .open-badge {
   display: inline-flex;
   gap: 9px;
@@ -2649,6 +2628,20 @@ button {
   margin: 8px 0 0;
   font-size: 1rem;
   line-height: 1.7;
+}
+
+.opening-apply {
+  display: inline-flex;
+  gap: 6px;
+  margin-top: 16px;
+  align-items: center;
+  color: var(--blue);
+  font-size: 0.88rem;
+  font-weight: 700;
+}
+
+.opening-apply:hover {
+  color: var(--blue-hover);
 }
 
 .opening > strong {
@@ -3442,6 +3435,8 @@ button {
   color: var(--blue);
   font-weight: 600;
   text-decoration: underline;
+  text-decoration-skip-ink: none;
+  text-decoration-thickness: 1px;
   text-underline-offset: 3px;
 }
 
@@ -3486,7 +3481,4 @@ button {
     width: calc(100vw - 32px);
   }
 
-  .section-heading-aside {
-    gap: 16px;
-  }
 }
