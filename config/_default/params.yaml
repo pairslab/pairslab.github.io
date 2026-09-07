@@ -6,7 +6,7 @@
 # Appearance
 
 assets:
-  version: '20260828-news-images-v1'
+  version: '20260907-firenav-card-v1'
 
 appearance:
   theme_day: minimal

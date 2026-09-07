@@ -23,24 +23,33 @@ robust-autonomy:
 
   - title: 4D Radar Scene Flow and Motion Understanding
     summary: Hidden Gems learns scene flow from sparse 4D radar through cross-modal supervision, supporting motion segmentation and ego-motion estimation in dynamic driving scenes.
-    media_label: Scene-flow demo
     poster: images/publications/hidden-gems.jpg
     fit: contain
-    demo: media/research/demos/hidden-gems-scene-flow.mp4
-    source_asset: https://fangqiangding.com/publication/23-cmflow-cvpr/gifs/scene-flow/gif-1.gif
+    demos:
+      - src: media/research/demos/hidden-gems-scene-flow.mp4
+        poster: images/research/topics/hidden-gems-scene-flow.jpg
+        label: Scene Flow
+      - src: media/research/demos/hidden-gems-motion-seg.mp4
+        poster: images/research/topics/hidden-gems-motion-seg.jpg
+        label: Motion Segmentation
+      - src: media/research/demos/hidden-gems-ego-motion.mp4
+        poster: images/research/topics/hidden-gems-ego-motion.jpg
+        label: Ego-Motion
+    source_asset:
+      - https://fangqiangding.com/publication/23-cmflow-cvpr/gifs/scene-flow/gif-1.gif
+      - https://fangqiangding.com/publication/23-cmflow-cvpr/gifs/motion-seg/gif-1.gif
+      - https://fangqiangding.com/publication/23-cmflow-cvpr/gifs/ego-motion/gif-1.gif
     project_url: https://fangqiangding.com/publication/23-cmflow-cvpr/
     link_label: Explore Hidden Gems
     attribution: PI first-authored work · CVPR 2023 Highlight
 
-  - title: "RaTrack: Moving Object Detection and Tracking with 4D Radar"
-    summary: RaTrack detects and tracks moving objects from sparse, noisy 4D radar point clouds by combining motion segmentation and clustering with motion estimation for robust dynamic-scene perception.
-    media_label: 4D radar tracking
-    poster: images/publications/ratrack.jpg
+  - title: "FireNav: Hazard-Aware Navigation in Fire-ground Environment"
+    summary: FireNav combines controllable fire simulation with synchronized thermal and 4D radar observations to benchmark PointGoal Navigation, evaluating goal completion and collision avoidance alongside peak temperature and cumulative heat exposure.
+    media_label: Fire rescue
+    poster: images/research/topics/firenav.jpg
     fit: contain
-    demo: media/research/demos/RaTrack.mp4
-    project_url: https://arxiv.org/abs/2309.09737
-    link_label: View RaTrack
-    attribution: PI co-first-authored work · ICRA 2024
+    demo: media/research/demos/firenav.mp4
+    attribution: Ongoing lab prototype · Not linked to a publication
 
 human-sensing:
   - title: Wrist-Worn Muscle-Activity Sensing
