@@ -1,0 +1,35 @@
+{{ define "main" }}
+  <section class="page-hero page-hero-join">
+    <div class="page-hero-grid" aria-hidden="true"></div>
+    <div class="page-shell">
+      <a class="apply-back-link" href="{{ "join/" | relURL }}"><span aria-hidden="true">←</span> Join PAIRS Lab</a>
+      <h1>{{ .Title }}</h1>
+      <div class="page-intro">
+        <p>One email covers every opening on the Join page — PhD, MPhil, MSc, research assistant, intern, and visiting student.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section apply-section">
+    <div class="apply-shell">
+      <div class="apply-block reveal">
+        <p>Please email <a href="mailto:fangqiangd@hkust-gz.edu.cn">fangqiangd@hkust-gz.edu.cn</a> with the subject line:</p>
+        <p class="apply-subject"><code>PAIRS Lab: [PhD/MPhil/MSc/RA/Intern/Visitor] Application — [Your Name]</code></p>
+      </div>
+
+      <div class="apply-block reveal">
+        <h2>Include</h2>
+        <ul class="apply-list">
+          <li>Resume (CV)</li>
+          <li>Statement of research fit — your research experience, interests, and future plans</li>
+          <li>Relevant papers, reports, transcripts, certificates, or other supporting materials (if any)</li>
+        </ul>
+      </div>
+
+      <div class="apply-block reveal">
+        <p>Admission timing differs by position, so please check the <a href="{{ "join/" | relURL }}">open positions</a> before you write. MPhil and MSc applicants in particular should contact us once they hold a firm offer or have formally enrolled.</p>
+        <p>We welcome interested students to reach out — and please feel free to share this page with others who might be a good fit. For more about what we work on, see our <a href="{{ "research/" | relURL }}">research directions</a>.</p>
+      </div>
+    </div>
+  </section>
+{{ end }}

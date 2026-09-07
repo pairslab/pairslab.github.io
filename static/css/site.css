@@ -2580,6 +2580,27 @@ button {
   background: var(--white);
 }
 
+.section-heading-aside {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.section-heading-link {
+  display: inline-flex;
+  gap: 7px;
+  align-items: center;
+  color: var(--blue);
+  font-size: 0.86rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.section-heading-link:hover {
+  color: var(--blue-hover);
+}
+
 .open-badge {
   display: inline-flex;
   gap: 9px;
@@ -3372,5 +3393,100 @@ button {
   .motion-ready .reveal {
     opacity: 1;
     transform: none;
+  }
+}
+
+.apply-shell {
+  width: min(760px, calc(100vw - 64px));
+  margin-inline: auto;
+}
+
+.apply-back-link {
+  display: inline-flex;
+  gap: 8px;
+  margin-bottom: 30px;
+  align-items: center;
+  color: var(--blue);
+  font-size: 0.88rem;
+  font-weight: 700;
+}
+
+.apply-back-link:hover {
+  color: var(--blue-hover);
+}
+
+.apply-block + .apply-block {
+  margin-top: 46px;
+}
+
+.apply-block h2 {
+  margin: 0 0 18px;
+  color: var(--ink-strong);
+  font-size: 1.32rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.apply-block p {
+  margin: 0 0 1.3em;
+  color: #334f61;
+  font-size: 1.02rem;
+  line-height: 1.82;
+}
+
+.apply-block p:last-child {
+  margin-bottom: 0;
+}
+
+.apply-block a {
+  color: var(--blue);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.apply-block a:hover {
+  color: var(--blue-hover);
+}
+
+.apply-subject {
+  overflow-x: auto;
+  padding: 16px 18px;
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--blue);
+  border-radius: var(--radius);
+  background: var(--bg-alt);
+}
+
+.apply-subject code {
+  color: var(--ink-strong);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.9rem;
+  white-space: nowrap;
+}
+
+.apply-list {
+  margin: 0;
+  padding-left: 1.25em;
+  color: #334f61;
+  font-size: 1.02rem;
+  line-height: 1.82;
+}
+
+.apply-list li + li {
+  margin-top: 8px;
+}
+
+.apply-list li::marker {
+  color: var(--blue);
+}
+
+@media (max-width: 680px) {
+  .apply-shell {
+    width: calc(100vw - 32px);
+  }
+
+  .section-heading-aside {
+    gap: 16px;
   }
 }

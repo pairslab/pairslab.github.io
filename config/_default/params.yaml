@@ -6,7 +6,7 @@
 # Appearance
 
 assets:
-  version: '20260907-demo-rail-v2'
+  version: '20260908-how-to-apply-v1'
 
 appearance:
   theme_day: minimal
