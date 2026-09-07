@@ -2633,10 +2633,9 @@ button {
 .opening-apply {
   display: inline-flex;
   gap: 6px;
-  margin-top: 16px;
   align-items: center;
   color: var(--blue);
-  font-size: 0.88rem;
+  font-size: 0.86rem;
   font-weight: 700;
 }
 
@@ -2644,11 +2643,19 @@ button {
   color: var(--blue-hover);
 }
 
-.opening > strong {
+.opening > strong,
+.opening-aside > strong {
   color: var(--muted);
   font-size: 0.82rem;
   font-weight: 700;
   text-align: right;
+}
+
+.opening-aside {
+  display: flex;
+  gap: 12px;
+  flex-direction: column;
+  align-items: flex-end;
 }
 
 .opening-link {
@@ -3316,10 +3323,16 @@ button {
   }
 
   .opening > strong,
+  .opening-aside,
   .opening-link {
     grid-column: 2;
     justify-self: start;
     text-align: left;
+  }
+
+  .opening-aside {
+    gap: 8px;
+    align-items: flex-start;
   }
 
   .footer-shell {
