@@ -1359,6 +1359,51 @@ button {
   object-fit: cover;
 }
 
+.research-topic-media.is-stacked {
+  background: var(--white);
+}
+
+.research-topic-media-stack {
+  display: grid;
+  height: 100%;
+  gap: 1px;
+  background: var(--line);
+  grid-auto-rows: minmax(0, 1fr);
+}
+
+.research-topic-media-slot {
+  display: grid;
+  min-height: 0;
+  background: var(--bg-alt);
+  grid-template-columns: clamp(66px, 17%, 96px) minmax(0, 1fr);
+}
+
+.research-topic-media-slot-label {
+  align-self: center;
+  padding: 0 10px;
+  text-align: center;
+  color: var(--ink-strong);
+  font-size: 0.63rem;
+  font-weight: 700;
+  line-height: 1.38;
+  letter-spacing: 0.005em;
+  overflow-wrap: anywhere;
+}
+
+.research-topic-media-frame {
+  position: relative;
+  min-width: 0;
+  min-height: 0;
+  border-left: 1px solid var(--line);
+  background: var(--white);
+}
+
+.research-topic-media.is-stacked .research-topic-media-frame video {
+  position: absolute;
+  inset: 0;
+  background: var(--white);
+}
+
 .research-topic-media-label {
   position: absolute;
   right: 12px;
