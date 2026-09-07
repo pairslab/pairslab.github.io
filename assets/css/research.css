@@ -12,6 +12,13 @@
   grid-template-columns: minmax(180px, 0.55fr) minmax(0, 1.45fr);
 }
 
+/* This column is narrower than the one site.css sized the heading for, so cap
+   the heading to keep "Physical AI" on one line. */
+.physical-ai-intro h2 {
+  font-size: clamp(2.8rem, 4vw, 3.9rem);
+  white-space: nowrap;
+}
+
 .physical-ai-intro-copy p,
 .research-editorial-copy > p {
   color: var(--ink);
