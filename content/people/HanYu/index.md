@@ -2,7 +2,7 @@
 title: Yu Han
 description: Yu Han is an Intern at PAIRS Lab, HKUST(GZ), working on multimodal hand sensing and force-aware robot learning.
 group: ra
-weight: 100
+weight: 70
 role: Research Assistant
 position: Research Assistant
 affiliation: PAIRS Lab, HKUST(GZ)
@@ -11,7 +11,7 @@ period: 2026–Present
 image: portrait.jpg
 links:
   - label: Email
-    url: mailto:ezoihy@163.com
+    url: mailto:yuhan@hkust-gz.edu.cn
   - label: Personal site
     url: https://ezoihy.github.io/
   - label: GitHub
