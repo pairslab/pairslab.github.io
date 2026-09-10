@@ -8,7 +8,7 @@ robust-autonomy:
     source_asset: https://guide-navigation.github.io/public/assets/videos/web/wild_02_outdoor.mp4
     project_url: https://guide-navigation.github.io/
     link_label: Explore GUIDE
-    attribution: PI co-authored work · 2026
+    attribution: 2026
 
   - title: All-Weather 3D Occupancy with 4D Radar
     summary: RadarOcc uses 4D imaging radar to estimate dense 3D occupancy in adverse weather and lighting conditions where camera- and LiDAR-based perception can degrade.
@@ -19,7 +19,7 @@ robust-autonomy:
     source_asset: https://fangqiangding.com/publication/24-radarocc-neurips/resources/radarocc_gif_demo_snow.gif
     project_url: https://fangqiangding.com/publication/24-radarocc-neurips/
     link_label: Explore RadarOcc
-    attribution: PI first-authored work · NeurIPS 2024
+    attribution: NeurIPS 2024
 
   - title: 4D Radar Scene Flow and Motion Understanding
     summary: Hidden Gems learns scene flow from sparse 4D radar through cross-modal supervision, supporting motion segmentation and ego-motion estimation in dynamic driving scenes.
@@ -41,7 +41,7 @@ robust-autonomy:
       - https://fangqiangding.com/publication/23-cmflow-cvpr/gifs/ego-motion/gif-1.gif
     project_url: https://fangqiangding.com/publication/23-cmflow-cvpr/
     link_label: Explore Hidden Gems
-    attribution: PI first-authored work · CVPR 2023 Highlight
+    attribution: CVPR 2023 Highlight
 
   - title: "FireNav: Hazard-Aware Navigation in Fire-ground Environment"
     summary: FireNav combines controllable fire simulation with synchronized thermal and 4D radar observations to benchmark PointGoal Navigation, evaluating goal completion and collision avoidance alongside peak temperature and cumulative heat exposure.
@@ -69,7 +69,7 @@ human-sensing:
     source_asset: https://fanjunqiao.github.io/M4Human-site/static/dataset_videos/combined_output_depth_50.mp4
     project_url: https://fanjunqiao.github.io/M4Human-site/
     link_label: Explore M4Human
-    attribution: PI co-authored work · CVPR 2026
+    attribution: CVPR 2026
 
   - title: Thermal Egocentric Hand Pose
     summary: ThermoHands captures articulated 3D hand motion from egocentric thermal images during object interactions, including conditions affected by darkness, glare, and handwear.
@@ -84,7 +84,7 @@ human-sensing:
       - https://thermohands.github.io/resources/darkness_virtual_2.mp4
     project_url: https://thermohands.github.io/
     link_label: Explore ThermoHands
-    attribution: PI first-authored work · SenSys 2025
+    attribution: SenSys 2025
 
   - title: mmWave Radar Human Motion Sensing
     summary: milliFlow estimates human scene flow from sparse mmWave radar point clouds, providing motion representations without relying on conventional visible-light imagery.
@@ -94,7 +94,7 @@ human-sensing:
     fit: contain
     project_url: https://arxiv.org/abs/2306.17010
     link_label: View milliFlow
-    attribution: PI first-authored work · ECCV 2024
+    attribution: ECCV 2024
 
 embodied-autonomy:
   - title: Progress-Aware Long-Horizon Manipulation
@@ -106,7 +106,7 @@ embodied-autonomy:
     source_asset: https://plan-lab.github.io/projects/palm/static/videos/original.mp4
     project_url: https://plan-lab.github.io/projects/palm/
     link_label: Explore PALM
-    attribution: PI co-authored work · CVPR 2026
+    attribution: CVPR 2026
 
   - title: Sequential Block Stacking with a Single Arm
     summary: This lab demonstration follows a single robotic arm as it places blocks in sequence. The setup provides a focused testbed for perception, action sequencing, task-state tracking, and reliable execution as we develop longer and more adaptive manipulation behaviors.
@@ -125,7 +125,7 @@ scalable-physical-ai:
     demo: media/research/demos/seeking-physics.m4v
     project_url: https://thegreatestcj.github.io/Physics-in-Noise/
     link_label: Explore Seeking Physics
-    attribution: PI co-authored work · 2026
+    attribution: 2026
 
   - title: Camera-Conditioned Radar Data Generation
     summary: RadarGen synthesizes automotive radar point clouds from multi-view cameras while preserving geometry, motion, and occlusion structure, illustrating a data-generation pipeline grounded in real scenes.
@@ -136,4 +136,4 @@ scalable-physical-ai:
     source_asset: https://radargen.github.io/static/videos/scene_2.mp4
     project_url: https://radargen.github.io/
     link_label: Explore RadarGen
-    attribution: PI co-authored work · ECCV 2026
+    attribution: ECCV 2026
