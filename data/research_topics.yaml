@@ -73,11 +73,15 @@ human-sensing:
 
   - title: Thermal Egocentric Hand Pose
     summary: ThermoHands captures articulated 3D hand motion from egocentric thermal images during object interactions, including conditions affected by darkness, glare, and handwear.
-    media_label: Annotation demo
-    poster: images/publications/thermohands.jpg
+    media_label: Adverse-condition demo
+    poster: images/research/topics/thermohands-conditions.jpg
     fit: contain
-    demo: media/research/demos/thermohands.mp4
-    source_asset: https://thermohands.github.io/resources/annotation_2.mp4
+    demo: media/research/demos/thermohands-conditions.mp4
+    source_asset:
+      - https://thermohands.github.io/resources/sun_glare_2_clip.mp4
+      - https://thermohands.github.io/resources/kitchen_2_clip.mp4
+      - https://thermohands.github.io/resources/darkness_object_2_clip.mp4
+      - https://thermohands.github.io/resources/darkness_virtual_2.mp4
     project_url: https://thermohands.github.io/
     link_label: Explore ThermoHands
     attribution: PI first-authored work · SenSys 2025
