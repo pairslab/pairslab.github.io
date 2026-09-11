@@ -1,6 +1,6 @@
 ---
-title: Wang Xiangyu
-description: Wang Xiangyu is a Research Assistant at PAIRS Lab, HKUST(GZ).
+title: Xiangyu Wang
+description: Xiangyu Wang is a Research Assistant at PAIRS Lab, HKUST(GZ).
 group: ra
 weight: 100
 role: Research Assistant
@@ -24,4 +24,4 @@ card_interests:
   - Vision-language-action models
 ---
 
-Wang Xiangyu is currently affiliated with Xidian University (XDU). He is a Research Assistant at PAIRS Lab, The Hong Kong University of Science and Technology (Guangzhou). His research interests include long-horizon robotic tasks, vision-language-action models, world action models, and robot navigation.
+Xiangyu Wang is currently affiliated with Xidian University (XDU). He is a Research Assistant at PAIRS Lab, The Hong Kong University of Science and Technology (Guangzhou). His research interests include long-horizon robotic tasks, vision-language-action models, world action models, and robot navigation.
