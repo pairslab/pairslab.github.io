@@ -1,5 +1,5 @@
 {{ define "main" }}
-  {{ $publications := site.Data.publications }}
+  {{ $publications := where site.Data.publications "year" "ge" 2023 }}
   {{ $years := slice }}
   {{ $topics := slice }}
   {{ range $publications }}

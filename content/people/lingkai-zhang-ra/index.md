@@ -6,7 +6,7 @@ weight: 100
 role: Research Assistant
 position: Research Assistant
 affiliation: PAIRS Lab, HKUST(GZ)
-institution: NJUPT
+institution:
 period: 2026–Present
 image: portrait.jpg
 links:
@@ -24,4 +24,4 @@ card_interests:
   - Mobile Manipulation
 ---
 
-Lingkai Zhang is currently pursuing his bachelor's degree in Electronic Information Engineering at Nanjing University of Posts and Telecommunications (NJUPT), Nanjing, China. He is also serving as a Research Assistant at PAIRS Lab, The Hong Kong University of Science and Technology (Guangzhou). His research interests include whole-body control and mobile manipulation.
+Lingkai Zhang is currently pursuing his bachelor's degree in Electronic Information Engineering. He is also serving as a Research Assistant at PAIRS Lab, The Hong Kong University of Science and Technology (Guangzhou). His research interests include whole-body control and mobile manipulation.
