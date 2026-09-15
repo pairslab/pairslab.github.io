@@ -6,7 +6,7 @@ weight: 100
 role: Intern
 position: Intern
 affiliation: PAIRS Lab, HKUST(GZ)
-institution: UMD
+institution:
 period: 2026–Present
 image: portrait.jpg
 links:
@@ -26,4 +26,4 @@ card_interests:
   - Robot navigation
 ---
 
-Tianhao Zang is currently pursuing undergraduate studies in Letters and Sciences at the University of Maryland, College Park. He is a Research Assistant at PAIRS Lab, The Hong Kong University of Science and Technology (Guangzhou). His research interests include embodied intelligence, robot navigation, multimodal robot learning, and legged robot learning and control. Previously, he studied Computer Science and Artificial Intelligence at the University of Nottingham Ningbo China.
+Tianhao Zang is currently pursuing undergraduate studies in Letters and Sciences. He is a Research Assistant at PAIRS Lab, The Hong Kong University of Science and Technology (Guangzhou). His research interests include embodied intelligence, robot navigation, multimodal robot learning, and legged robot learning and control.

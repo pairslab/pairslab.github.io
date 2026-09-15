@@ -28,30 +28,6 @@
       label: Hidden Gems · CVPR 2023
     - key: all-day-tracking
       label: All-Day UAV Tracking · TMC 2023
-    - key: raflow
-      label: RaFlow · RA-L 2022
-    - key: mrcf
-      label: MRCF · TIE 2022
-    - key: ad2attack
-      label: Ad2Attack · ICRA 2022
-    - key: dcf-review
-      label: DCF Tracking Review · GRSM 2022
-    - key: dynamic-regression
-      label: Dynamic Regression · EAAI 2021
-    - key: adtrack
-      label: ADTrack · ICRA 2021
-    - key: srecf
-      label: SRECF · TMM 2021
-    - key: mscf
-      label: MSCF · ICRA 2021
-    - key: autotrack
-      label: AutoTrack · CVPR 2020
-    - key: jsar
-      label: Failure Recovery for UAV Tracking · IROS 2020
-    - key: dr2track
-      label: DR2Track · IROS 2020
-    - key: amcf
-      label: Augmented Memory CF · IROS 2020
 
 - id: human-sensing
   number: "02"

@@ -28,4 +28,4 @@ card_interests:
 
 ---
 
-Yi Zhang is currently pursuing an MSc degree at The Hong Kong University of Science and Technology (Guangzhou). He received his bachelor's degree from Guangdong Ocean University, where he conducted research on AI for CFD and computational mechanics under the supervision of Professor Dapeng Zhang. He is an MSc Student at PAIRS Lab, with a primary research interest in Real2Sim for robot learning.
+Yi Zhang is currently pursuing an MSc degree at The Hong Kong University of Science and Technology (Guangzhou). During his bachelor's studies, he conducted research on AI for CFD and computational mechanics under the supervision of Professor Dapeng Zhang. He is an MSc Student at PAIRS Lab, with a primary research interest in Real2Sim for robot learning.

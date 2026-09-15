@@ -6,7 +6,7 @@ weight: 100
 role: Intern
 position: Intern
 affiliation: PAIRS Lab, HKUST(GZ)
-institution: SWJTU
+institution:
 period: 2026–Present
 image: portrait.jpg
 links:
@@ -23,4 +23,4 @@ card_interests:
   - Robot navigation
   - Robot learning
 ---
-Kaiyuan Zhang is currently pursuing a B.Sc. in Computer Science at Southwest Jiaotong University, Chengdu, China. He is also serving as a Research Assistant at PAIRS Lab, The Hong Kong University of Science and Technology (Guangzhou). He works on robot navigation and SLAM as a member of the Helios RoboMaster team, and has interned at Galbot as an Embodied Algorithm Ecosystem Engineer. His research interests include robot navigation, robot learning, and embodied AI.
+Kaiyuan Zhang is currently pursuing a B.Sc. in Computer Science. He is also serving as a Research Assistant at PAIRS Lab, The Hong Kong University of Science and Technology (Guangzhou). He works on robot navigation and SLAM as a member of the Helios RoboMaster team, and has interned at Galbot as an Embodied Algorithm Ecosystem Engineer. His research interests include robot navigation, robot learning, and embodied AI.

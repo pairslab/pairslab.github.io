@@ -6,7 +6,7 @@ weight: 100
 role: Intern
 position: Intern
 affiliation: PAIRS Lab, HKUST(GZ)
-institution: University of Southampton
+institution:
 period: 2026–Present
 image: portrait.jpg
 links:
@@ -25,4 +25,4 @@ card_interests:
   - Embodied intelligence
 ---
 
-Jingyi Zhong received her BSc in Computer Science (with Honours) from the University of Southampton, United Kingdom. She is currently an Intern at PAIRS Lab, The Hong Kong University of Science and Technology (Guangzhou). Her research interests lie at the intersection of robotics and control, with a focus on learning-based control and embodied intelligence. She has previously worked as a visiting undergraduate researcher at MURO Lab, UC San Diego.
+Jingyi Zhong received her BSc in Computer Science with Honours. She is currently an Intern at PAIRS Lab, The Hong Kong University of Science and Technology (Guangzhou). Her research interests lie at the intersection of robotics and control, with a focus on learning-based control and embodied intelligence. She has previously worked as a visiting undergraduate researcher at MURO Lab, UC San Diego.
