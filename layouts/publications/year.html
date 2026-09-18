@@ -1,5 +1,6 @@
 {{ define "main" }}
   {{ $publications := where site.Data.publications "year" "ge" 2023 }}
+  {{ $publications = $publications | append (where site.Data.publications "key" "in" (slice "raflow" "ad2attack")) }}
   {{ $years := slice }}
   {{ range $publications }}
     {{ if not (in $years .year) }}

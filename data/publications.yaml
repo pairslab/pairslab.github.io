@@ -104,7 +104,7 @@
   venue: Computers and Electronics in Agriculture
   year: 2025
   kind: Journal
-  topic: Reliable Mobile Autonomy
+  topic: Others
   paper: https://doi.org/10.1016/j.compag.2025.110843
 
 - key: rss-pioneers
@@ -133,7 +133,7 @@
   venue: ASP-DAC 2025
   year: 2025
   kind: Conference
-  topic: Scalable Robot Learning
+  topic: Others
   paper: https://doi.org/10.1145/3658617.3697655
 
 - key: thermohands
