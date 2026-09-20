@@ -22,7 +22,7 @@ card_interests:
 - Dexterous manipulation
 - Multi-finger coordination
 - Force-position hybrid control
-  projects_note: Projects will be added soon.
+projects_note: Projects will be added soon.
 
 ---
 
