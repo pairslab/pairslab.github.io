@@ -1,4 +1,4 @@
 ---
-title: People
-description: Meet the people building PAIRS Lab.
+title: Member
+description: Meet the members building PAIRS Lab.
 ---

@@ -16,7 +16,7 @@ main:
   - name: News
     url: news/
     weight: 40
-  - name: People
+  - name: Member
     url: people/
     weight: 50
   - name: Join Us
