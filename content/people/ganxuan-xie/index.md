@@ -21,4 +21,4 @@ card_interests:
   - Humanoid Robotics
 ---
 
-Ganxuan Xie is currently pursuing an MSc in Smart Manufacturing and Management at The Hong Kong University of Science and Technology (Guangzhou). He is also a member of PAIRS Lab, HKUST(GZ), where his research interests focus on whole-body control, humanoid robotics, and robot manipulation.
+Ganxuan Xie is currently pursuing an MSc in Smart Manufacturing at The Hong Kong University of Science and Technology (Guangzhou). He is also a member of PAIRS Lab, HKUST(GZ), where his research interests focus on whole-body control, humanoid robotics, and robot manipulation.
