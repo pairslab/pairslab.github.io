@@ -7,7 +7,7 @@ role: Dexterous Hand Research Platform
 position: Dexterous Hand Research Platform
 affiliation: PAIRS Lab, HKUST(GZ)
 institution: AgiBot
-image: portrait.png
+image: portrait.jpg
 card_image_position: 80% 50%
 links:
 
