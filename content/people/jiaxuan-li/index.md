@@ -20,4 +20,4 @@ card_interests:
   - Robot Learning
 ---
 
-Jiaxuan Li is currently pursuing his degree in Robotics and Autonomous Systems at HKUST(GZ), Guangzhou, China. He is also serving as an MPhil Student at PAIRS Lab, The Hong Kong University of Science and Technology (Guangzhou). His research interests include multimodal embodied perception, embodied neuromorphic intelligence, robot learning, and embodied large models.
+Jiaxuan Li is currently pursuing his master's degree in Robotics and Autonomous Systems at HKUST(GZ), Guangzhou, China. He is also serving as an MPhil Student at PAIRS Lab, The Hong Kong University of Science and Technology (Guangzhou). His research interests include multimodal embodied perception, embodied neuromorphic intelligence, robot learning, and embodied large models.
