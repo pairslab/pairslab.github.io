@@ -1,0 +1,86 @@
+{{ $pi := .pi }}
+{{ $pages := .pages }}
+
+{{ if .search }}
+  <div class="people-member-search" data-member-search hidden>
+    <label for="member-search">Find a member</label>
+    <input id="member-search" type="search" role="combobox" autocomplete="off" spellcheck="false" placeholder="Search by name…" aria-autocomplete="list" aria-expanded="false" aria-controls="member-search-results" data-member-search-input>
+    <div class="people-member-search-popup" data-member-search-popup hidden>
+      <div id="member-search-results" role="listbox" aria-label="Members" data-member-search-results></div>
+      <p class="people-member-search-empty" role="status" data-member-search-empty hidden>No matching members. Try another name.</p>
+    </div>
+    <span class="sr-only" role="status" data-member-search-status></span>
+  </div>
+{{ end }}
+
+<div class="people-carousel" aria-roledescription="carousel" aria-label="{{ .label }}" tabindex="0" data-people-carousel>
+  <div class="people-carousel-stage" data-people-stage>
+    <div class="people-carousel-ring" data-people-ring>
+      {{ range $pi }}
+        <button class="people-carousel-card" type="button" data-people-card aria-label="Show {{ .name }}">
+          <span class="people-carousel-photo">
+            <img src="{{ .image | relURL }}" alt="{{ .name }}" loading="eager">
+          </span>
+          <span class="people-carousel-card-name">{{ .name }}</span>
+        </button>
+      {{ end }}
+
+      {{ range $pages }}
+        {{ $imageURL := partial "member-image.html" (dict "page" . "src" .Params.image) }}
+        {{ $imageScale := .Params.card_image_scale | default 1 }}
+        {{ $imagePosition := .Params.card_image_position | default "center top" }}
+        <button class="people-carousel-card{{ if eq .Params.group "infra" }} is-equipment{{ end }}" type="button" data-people-card aria-label="Show {{ .Title }}">
+          <span class="people-carousel-photo">
+            <img src="{{ $imageURL }}" alt="{{ .Title }}" loading="lazy" style="{{ printf "--member-image-scale: %v; --member-image-position: %s;" $imageScale $imagePosition | safeCSS }}">
+          </span>
+          <span class="people-carousel-card-name">{{ .Title }}</span>
+        </button>
+      {{ end }}
+    </div>
+  </div>
+
+  <button class="people-carousel-arrow people-carousel-prev" type="button" aria-label="Previous profile" data-people-prev>
+    <span aria-hidden="true">&#9664;</span>
+  </button>
+  <button class="people-carousel-arrow people-carousel-next" type="button" aria-label="Next profile" data-people-next>
+    <span aria-hidden="true">&#9654;</span>
+  </button>
+
+  <div class="people-carousel-dots" aria-label="Choose a profile" data-people-dots>
+    {{ range $pi }}
+      <button type="button" data-people-dot aria-label="Show {{ .name }}"></button>
+    {{ end }}
+    {{ range $pages }}
+      <button type="button" data-people-dot aria-label="Show {{ .Title }}"></button>
+    {{ end }}
+  </div>
+
+  <div class="people-carousel-details" aria-live="polite">
+    {{ range $pi }}
+      <article class="people-carousel-detail" data-people-detail>
+        <h2 class="people-carousel-director-title"><span>{{ .role }}:</span> {{ .name }}</h2>
+        {{ with .slug }}<a class="people-profile-link" href="{{ printf "people/%s/" . | relURL }}">View profile <span aria-hidden="true">&#8599;</span></a>{{ end }}
+      </article>
+    {{ end }}
+
+    {{ range $pages }}
+      <article class="people-carousel-detail" data-people-detail>
+        {{ if eq .Params.group "robot" }}
+          <p class="people-carousel-role">Robots</p>
+        {{ else if eq .Params.group "infra" }}
+          <p class="people-carousel-role">Infrastructure</p>
+        {{ else }}
+          {{ with .Params.role }}<p class="people-carousel-role">{{ . }}</p>{{ end }}
+        {{ end }}
+        <h2>{{ .Title }}</h2>
+        {{ if in (slice "robot" "infra") .Params.group }}
+          {{ with .Params.role }}<p class="people-carousel-meta"><strong>{{ . }}</strong></p>{{ end }}
+        {{ else if and .Params.position (ne .Params.position .Params.role) }}
+          <p class="people-carousel-meta"><strong>{{ .Params.position }}</strong></p>
+        {{ end }}
+        {{ with .Plain }}<p class="people-carousel-bio">{{ . }}</p>{{ end }}
+        <a class="people-profile-link" href="{{ .RelPermalink }}">View profile <span aria-hidden="true">&#8599;</span></a>
+      </article>
+    {{ end }}
+  </div>
+</div>

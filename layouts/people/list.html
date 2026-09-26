@@ -1,84 +1,52 @@
 {{ define "main" }}
-  {{ $peoplePage := . }}
-  <section class="page-hero page-hero-people">
-    <div class="page-shell">
-      <h1>Member</h1>
-      <div class="page-intro">
+  {{ $machineGroups := slice "robot" "infra" }}
+  {{ $peopleMembers := where .RegularPages "Params.group" "not in" $machineGroups }}
+  {{ $machines := slice }}
+  {{ range $machineGroups }}
+    {{ range (where $.RegularPages "Params.group" .).ByWeight }}
+      {{ $machines = $machines | append . }}
+    {{ end }}
+  {{ end }}
+
+  <section class="people-original-page">
+    <div class="section-shell" data-people-directory>
+      <header class="people-directory-intro">
+        <h1>Member</h1>
         <p>Meet the members working on Physical AI and robotic systems at PAIRS Lab.</p>
-      </div>
-    </div>
-  </section>
+      </header>
 
-  <section class="people-section section">
-    <div class="section-shell">
-      <div class="people-pi-list">
-        {{ range site.Data.people }}
-          {{ $person := . }}
-          <article class="people-pi-card reveal">
-            {{ with .slug }}
-              <a class="people-pi-photo" href="{{ printf "people/%s/" . | relURL }}" aria-label="View {{ $person.name }}'s profile">
-                <img src="{{ $person.image | relURL }}" alt="{{ $person.name }}" loading="eager">
-              </a>
-            {{ else }}
-              <div class="people-pi-photo"><img src="{{ .image | relURL }}" alt="{{ .name }}" loading="eager"></div>
-            {{ end }}
-            <div class="people-pi-copy">
-              <span class="pi-role">{{ .role }}</span>
-              <h2>{{ with .slug }}<a href="{{ printf "people/%s/" . | relURL }}">{{ $person.name }}</a>{{ else }}{{ $person.name }}{{ end }}</h2>
-              <p class="people-pi-position"><strong>{{ .position }}</strong><span>{{ .affiliation }}</span></p>
-              {{ with .bio }}<p class="people-pi-bio">{{ . }}</p>{{ end }}
-              {{ with .slug }}<a class="people-profile-link" href="{{ printf "people/%s/" . | relURL }}">View profile <span aria-hidden="true">→</span></a>{{ end }}
-            </div>
-          </article>
-        {{ end }}
+      <div class="people-type-switch" role="tablist" aria-label="Choose directory type">
+        <button class="is-active" type="button" role="tab" aria-selected="true" aria-controls="people-directory-people" data-people-view="people">
+          <span>People</span>
+        </button>
+        <button type="button" role="tab" aria-selected="false" aria-controls="people-directory-machines" data-people-view="machines">
+          <span>Robots &amp; Infrastructure</span>
+        </button>
       </div>
-    </div>
-  </section>
 
-  <section class="member-groups-section section">
-    <div class="section-shell">
-      {{ range site.Data.team_groups }}
-        {{ $members := where $peoplePage.RegularPages "Params.group" .key }}
-        {{ $members = $members.ByWeight }}
-        {{ $itemSingular := .item_singular | default "member" }}
-        {{ $itemPlural := .item_plural | default "members" }}
-        {{ if or $members .show_when_empty }}
-          <section class="member-category member-category-{{ .key }}">
-            <div class="member-category-heading">
-              <div>
-                <span class="section-kicker">{{ .label }}</span>
-                <h2>{{ .title }}</h2>
-              </div>
-              <span>{{ len $members }} {{ if eq (len $members) 1 }}{{ $itemSingular }}{{ else }}{{ $itemPlural }}{{ end }}</span>
-            </div>
-            {{ if $members }}
-              <div class="member-grid">
-                {{ range $members }}
-                  {{ $member := . }}
-                  {{ $imageURL := partial "member-image.html" (dict "page" . "src" .Params.image) }}
-                  {{ $imageScale := .Params.card_image_scale | default 1 }}
-                  {{ $imagePosition := .Params.card_image_position | default "center top" }}
-                  <article class="member-card">
-                    <a class="member-card-link" href="{{ .RelPermalink }}" aria-label="View {{ .Title }} profile">
-                      <div class="member-photo">
-                        <img src="{{ $imageURL }}" alt="{{ .Title }}" loading="lazy" style="{{ printf "--member-image-scale: %v; --member-image-position: %s;" $imageScale $imagePosition | safeCSS }}">
-                      </div>
-                      <h3>{{ .Title }}</h3>
-                      {{ if or .Params.period .Params.card_interests }}
-                        <p class="member-profile-summary">
-                          {{ with .Params.period }}{{ . }}{{ end }}{{ if and .Params.period .Params.card_interests }}: {{ end }}{{ range $index, $interest := .Params.card_interests }}{{ if $index }}, {{ end }}{{ $interest }}{{ end }}
-                        </p>
-                      {{ end }}
-                    </a>
-                  </article>
-                {{ end }}
-              </div>
-            {{ else }}
-              <p class="member-empty">Member profiles will be added soon.</p>
-            {{ end }}
-          </section>
-        {{ end }}
-      {{ end }}
+      <section class="people-original-panel" id="people-directory-people" role="tabpanel" data-people-view-panel="people">
+        <div class="people-original-panel-heading">
+          <p class="section-kicker">01 / THE TEAM</p>
+          <h2>People</h2>
+        </div>
+        {{ partial "people-carousel.html" (dict
+          "pi" site.Data.people
+          "pages" $peopleMembers.ByWeight
+          "label" "PAIRS Lab people"
+          "search" true
+        ) }}
+      </section>
+
+      <section class="people-original-panel people-original-machines" id="people-directory-machines" role="tabpanel" data-people-view-panel="machines" hidden>
+        <div class="people-original-panel-heading">
+          <p class="section-kicker">02 / THE PLATFORMS</p>
+          <h2>Robots &amp; Research Infrastructure</h2>
+        </div>
+        {{ partial "people-carousel.html" (dict
+          "pages" $machines
+          "label" "PAIRS Lab robots and research infrastructure"
+        ) }}
+      </section>
     </div>
   </section>
 {{ end }}

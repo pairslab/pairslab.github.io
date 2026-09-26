@@ -21,4 +21,4 @@ card_interests:
   - Reinforcement Learning
 ---
 
-Zhanteng Wu is currently pursuing an MPhil degree at The Hong Kong University of Science and Technology (Guangzhou). He is also serving as an MPhil Student at PAIRS Lab, The Hong Kong University of Science and Technology (Guangzhou). His research interests include reinforcement learning, embodied AI, and lightweight AI for edge devices.
+At PAIRS Lab, Zhanteng Wu researches reinforcement learning, embodied AI, and lightweight AI for edge devices while pursuing his degree at The Hong Kong University of Science and Technology (Guangzhou).

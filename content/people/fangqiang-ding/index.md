@@ -1,8 +1,8 @@
 ---
 title: Fangqiang Ding
 layout: pi
-description: Fangqiang Ding is the Principal Investigator of PAIRS Lab at HKUST(GZ).
-role: Principal Investigator
+description: Fangqiang Ding is the Lab Director of PAIRS Lab at HKUST(GZ).
+role: Lab Director
 position: Tenure-Track Assistant Professor
 affiliation: Robotics and Autonomous Systems Thrust, Systems Hub, HKUST(GZ)
 image: images/prof_pic-optimized.jpg
