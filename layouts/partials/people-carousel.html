@@ -78,7 +78,7 @@
         {{ else if and .Params.position (ne .Params.position .Params.role) }}
           <p class="people-carousel-meta"><strong>{{ .Params.position }}</strong></p>
         {{ end }}
-        {{ with .Plain }}<p class="people-carousel-bio">{{ . }}</p>{{ end }}
+        {{ with .Plain }}<p class="people-carousel-bio">{{ . | htmlUnescape }}</p>{{ end }}
         <a class="people-profile-link" href="{{ .RelPermalink }}">View profile <span aria-hidden="true">&#8599;</span></a>
       </article>
     {{ end }}
