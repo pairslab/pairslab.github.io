@@ -1,12 +1,12 @@
 - id: robust-autonomy
   number: "01"
   slug: robust-mobile-autonomy
-  nav_title: Mobile Autonomy
+  nav_title: Perception and Navigation
   label: Operate under extremes
-  display_title: Robust Mobile Autonomy for Challenging and Safety-Critical Environments
+  display_title: Robust Perception and Autonomous Navigation
   paragraphs:
     - >-
-      Our laboratory focuses on robust mobile autonomy for challenging and safety-critical environments, including firefighting, disaster response, emergency rescue, and other extreme scenarios. These environments represent some of the most demanding yet impactful applications of robotics, where autonomous systems can reduce human exposure to danger, extend operational capabilities beyond human limits, and support faster and safer emergency response. However, smoke, darkness, heat, dynamic hazards, uncertain terrain, and sensor degradation can fundamentally challenge conventional robotic autonomy. While modular pipelines for perception, localization, planning, and control have been extensively studied, their performance often depends on reliable intermediate modules and predefined environmental assumptions. Our research explores learning-based and end-to-end autonomy, with emphasis on multimodal perception, robust representations, hazard-aware decision making, and policy learning. By integrating complementary sensing such as thermal imaging and radar, we aim to develop robotic systems that can operate safely, adaptively, and reliably in environments where conventional autonomy is most likely to fail.
+      Our research focuses on robust perception and autonomous navigation for safety-critical applications, including firefighting, disaster response, and emergency rescue. We develop learning-based and end-to-end navigation methods that combine multimodal perception with hazard-aware decision-making. By integrating complementary sensing modalities such as thermal imaging and radar, we aim to enable safe, adaptive, and reliable navigation despite poor visibility, extreme heat, dynamic hazards, and degraded sensor performance.
   outputs:
     - key: guide
       label: GUIDE · 2026
@@ -31,17 +31,30 @@
     - key: ad2attack
       label: Ad2Attack · ICRA 2022
 
-- id: human-sensing
+- id: embodied-autonomy
   number: "02"
+  slug: memory-aware-mobile-manipulation
+  nav_title: Agentic Robotics
+  label: Remember and act
+  display_title: Long-Horizon Manipulation and Agentic Robotics
+  paragraphs:
+    - >-
+      Our research focuses on long-horizon manipulation and agentic robotics, integrating perception, memory, task planning, and policy learning to enable robots to decompose goals, coordinate skills, and execute multi-step tasks. We investigate agents that monitor progress, adapt plans, and recover from failures under partial observability and changing environments. By coupling high-level reasoning with closed-loop control informed by visual and physical feedback, we aim to enable reliable and adaptive manipulation in the real world.
+  outputs:
+    - key: palm
+      label: PALM · CVPR 2026
+    - key: dexterous-survey
+      label: Dexterous Manipulation Survey · T-ASE 2025
+
+- id: human-sensing
+  number: "03"
   slug: human-motion-and-affect-sensing
   nav_title: Human Interaction Sensing
   label: Sense motion and contact
   display_title: Human Motion and Physical Interaction Sensing
   paragraphs:
     - >-
-      Our research focuses on sensing and understanding human motion and the physical interactions between humans and their environments. We develop multimodal sensing systems that integrate millimeter-wave radar, vision, surface electromyography (sEMG), inertial sensing, and force sensing to capture body and hand movements, muscle activity, contact events, and interaction forces. Our work encompasses the entire technical pipeline, from synchronized multimodal data acquisition, sensor calibration, and dataset development to multimodal learning and real-time state estimation. We aim to derive informative representations of human actions, interaction states, and behavioral intent from heterogeneous sensor data.
-    - >-
-      By moving beyond motion-only representations, we seek to characterize the relationships among movement, muscle activation, physical contact, and force during human motion and dexterous manipulation. These physically grounded representations provide richer and more complete information about human behavior for robot manipulation learning, with broader applications in human–computer interaction and rehabilitation.
+      Our research focuses on human motion and physical interaction sensing. We integrate millimeter-wave radar, vision, surface electromyography (sEMG), inertial sensing, and force sensing to capture body and hand motion, muscle activity, contact events, and interaction forces. Through synchronized data acquisition, sensor calibration, and multimodal learning, we develop physically grounded representations of human movement and interaction to support learning for robotic manipulation, human–computer interaction, and rehabilitation.
   outputs:
     - key: mld
       label: AI-based Motor Assessment · TNSRE 2026
@@ -52,29 +65,12 @@
     - key: milliflow
       label: milliFlow · ECCV 2024
 
-- id: embodied-autonomy
-  number: "03"
-  slug: memory-aware-mobile-manipulation
-  nav_title: Long-Horizon Manipulation
-  label: Remember and act
-  display_title: Long-Horizon and Memory-Aware Mobile Manipulation
-  paragraphs:
-    - >-
-      Our research focuses on long-horizon and memory-aware mobile manipulation. We develop learning-based systems that integrate perception, memory, navigation, and manipulation to carry out complex, multi-step tasks over extended periods. Our work spans scene understanding, memory representation and retrieval, decision-making, policy learning, and real-world deployment. We aim to enable robots to preserve temporal context, track task progress, adapt to changing operating conditions, and use past observations and interactions to guide future actions.
-    - >-
-      Long-horizon execution is challenging under incomplete observations and changing scene configurations, where errors can accumulate across subtasks. Reactive policies that rely primarily on current observations often struggle to maintain coherent long-horizon behavior and recover from execution failures. We investigate memory-aware representations and policies that connect past experience and scene understanding with decisions over extended action sequences. By integrating perception, memory, navigation, and manipulation into a closed loop, we seek to develop reliable embodied agents that can operate robustly and adaptively in the real world.
-  outputs:
-    - key: palm
-      label: PALM · CVPR 2026
-    - key: dexterous-survey
-      label: Dexterous Manipulation Survey · T-ASE 2025
-
 - id: scalable-physical-ai
   number: "04"
   slug: scalable-robot-learning
-  nav_title: Scene & Data Synthesis
+  nav_title: Simulation & Robot Learning
   label: Synthesize and scale
-  display_title: Scalable Robot Learning through Scene and Data Synthesis
+  display_title: Generative Simulation and Robot Learning
   paragraphs:
     - >-
       Our research focuses on scalable robot learning through scene and data synthesis. By integrating 3D scene reconstruction, procedural generation, generative models, physics-based simulation, and motion planning, we construct diverse, interactive, and physically consistent virtual environments. Within these environments, we synthesize the visual observations, task specifications, action trajectories, and interaction feedback required for robot learning. Our research spans real-world scene digitization, simulation construction and randomization, task and behavior generation, synthetic-data quality assessment, policy learning, and sim-to-real transfer. We aim to transform limited real-world scenes and robot demonstrations into training environments and interaction data that can be systematically scaled across tasks, objects, and robot embodiments.

@@ -21,7 +21,7 @@ robust-autonomy:
     link_label: Explore RadarOcc
     attribution: NeurIPS 2024
 
-  - title: 4D Radar Scene Flow and Motion Understanding
+  - title: 4D Radar Scene Flow Estimation
     summary: Hidden Gems learns scene flow from sparse 4D radar through cross-modal supervision, supporting motion segmentation and ego-motion estimation in dynamic driving scenes.
     poster: images/publications/hidden-gems.jpg
     fit: contain
