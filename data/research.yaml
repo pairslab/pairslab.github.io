@@ -54,7 +54,7 @@
   display_title: Human Motion and Physical Interaction Sensing
   paragraphs:
     - >-
-      Our research focuses on human motion and physical interaction sensing. We integrate millimeter-wave radar, vision, surface electromyography (sEMG), inertial sensing, and force sensing to capture body and hand motion, muscle activity, contact events, and interaction forces. Through synchronized data acquisition, sensor calibration, and multimodal learning, we develop physically grounded representations of human movement and interaction to support learning for robotic manipulation, human–computer interaction, and rehabilitation.
+      We develop multimodal sensing systems to understand human motion and physical interactions. By combining millimeter-wave radar, vision, wearable sensors, and force measurements, we capture movement, muscle activity, and interaction forces. Through synchronized data acquisition, sensor calibration, and multimodal learning, we build physically grounded representations to support robot learning, human–computer interaction, and rehabilitation.
   outputs:
     - key: mld
       label: AI-based Motor Assessment · TNSRE 2026
@@ -73,9 +73,7 @@
   display_title: Generative Simulation and Robot Learning
   paragraphs:
     - >-
-      Our research focuses on scalable robot learning through scene and data synthesis. By integrating 3D scene reconstruction, procedural generation, generative models, physics-based simulation, and motion planning, we construct diverse, interactive, and physically consistent virtual environments. Within these environments, we synthesize the visual observations, task specifications, action trajectories, and interaction feedback required for robot learning. Our research spans real-world scene digitization, simulation construction and randomization, task and behavior generation, synthetic-data quality assessment, policy learning, and sim-to-real transfer. We aim to transform limited real-world scenes and robot demonstrations into training environments and interaction data that can be systematically scaled across tasks, objects, and robot embodiments.
-    - >-
-      This research addresses the high cost of real-world robot data collection, the limited diversity of available environments and tasks, and the scarcity of long-tail interaction data. We investigate the relationships among scene semantics, physical properties, task objectives, and robot behavior. By closing the loop from real-world perception and scene synthesis to large-scale data generation, policy learning, and physical deployment, we seek to improve generalization to unseen objects, environments, and tasks. This research provides scalable data and environment infrastructure for general-purpose robotic manipulation, embodied intelligence, and robot foundation models.
+      Our research focuses on generative simulation and robot learning through a real–sim–real pipeline. We reconstruct real-world scenes and use generative models to create diverse virtual environments. Physics-based simulation provides interaction data for policy learning, and we investigate the transfer of learned policies to real robots. We aim to reduce data collection costs and improve generalization to new objects, tasks, environments, and robot platforms.
   outputs:
     - key: physion-eval
       label: Physion-Eval · 2026

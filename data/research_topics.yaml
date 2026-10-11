@@ -130,10 +130,23 @@ scalable-physical-ai:
   - title: Camera-Conditioned Radar Data Generation
     summary: RadarGen synthesizes automotive radar point clouds from multi-view cameras while preserving geometry, motion, and occlusion structure, illustrating a data-generation pipeline grounded in real scenes.
     media_label: Generation demo
-    poster: images/publications/radargen.jpg
     fit: contain
     demo: media/research/demos/radargen.mp4
     source_asset: https://radargen.github.io/static/videos/scene_2.mp4
     project_url: https://radargen.github.io/
     link_label: Explore RadarGen
     attribution: ECCV 2026
+
+  - title: "TacFoundry: Touch-Aware Real-to-Sim Asset Generation from Video"
+    summary: TacFoundry turns ordinary videos into touchable, simulation-ready objects. It reconstructs 3D geometry, replays real gripper motions in a physics simulator, and generates simulated tactile observations using a learned sensor model.
+    media_label: Lab demonstration
+    fit: contain
+    demo: media/research/demos/tactile-real-to-sim.mp4
+    attribution: Ongoing lab prototype · Not linked to a publication
+
+  - title: "WorldForge: Learning Physics from Real-World Feedback"
+    summary: WorldForge is an agentic Real2Sim2Real framework that learns physical properties from real-world robot interactions and failures to continuously refine simulation. It enables the simulator and robot policy to co-evolve, with the aim of improving sim-to-real transfer.
+    media_label: Lab demonstration
+    fit: contain
+    demo: media/research/demos/scene-real-to-sim.mp4
+    attribution: Ongoing lab prototype · Not linked to a publication
