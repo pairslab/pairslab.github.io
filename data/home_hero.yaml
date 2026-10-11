@@ -14,10 +14,21 @@
   label: Aerial view of HKUST(GZ) and its surrounding environment
   video: media/research/demos/radarocc-snow.mp4
   position: center
-  title: Robust Mobile Autonomy for Challenging and Safety-Critical Environments
+  title: Robust Perception and Autonomous Navigation
   lede: We develop multimodal, learning-based autonomy for firefighting, disaster response, emergency rescue, and other environments where conventional robotic systems are most likely to fail.
   primary_label: Explore direction
   primary_url: research/#robust-autonomy
+  secondary_label: Research overview
+  secondary_url: research/
+
+- image: images/physical-ai-lab.jpg
+  label: Robot manipulation and physical interaction in the laboratory
+  video: media/research/demos/palm-progress.mp4
+  position: center
+  title: Long-Horizon Manipulation and Agentic Robotics
+  lede: We integrate perception, memory, navigation, and manipulation so robots can preserve context, track task progress, and recover across extended multi-step tasks.
+  primary_label: Explore direction
+  primary_url: research/#embodied-autonomy
   secondary_label: Research overview
   secondary_url: research/
 
@@ -32,22 +43,11 @@
   secondary_label: Research overview
   secondary_url: research/
 
-- image: images/physical-ai-lab.jpg
-  label: Robot manipulation and physical interaction in the laboratory
-  video: media/research/demos/palm-progress.mp4
-  position: center
-  title: Long-Horizon and Memory-Aware Mobile Manipulation
-  lede: We integrate perception, memory, navigation, and manipulation so robots can preserve context, track task progress, and recover across extended multi-step tasks.
-  primary_label: Explore direction
-  primary_url: research/#embodied-autonomy
-  secondary_label: Research overview
-  secondary_url: research/
-
 - image: images/hero/hkustgz-campus-night.jpg
   label: HKUST(GZ) campus at night
   video: media/research/demos/radargen.mp4
   position: center
-  title: Scalable Robot Learning through Scene and Data Synthesis
+  title: Generative Simulation and Robot Learning
   lede: We turn real-world scenes and demonstrations into scalable virtual environments, interaction data, and learning pipelines that generalize across tasks, objects, and robot embodiments.
   primary_label: Explore direction
   primary_url: research/#scalable-physical-ai

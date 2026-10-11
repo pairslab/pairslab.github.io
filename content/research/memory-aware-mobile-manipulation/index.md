@@ -1,6 +1,6 @@
 ---
-title: Long-Horizon and Memory-Aware Mobile Manipulation
+title: Long-Horizon Manipulation and Agentic Robotics
 description: Research direction at PAIRS Lab.
-direction_number: "03"
-weight: 30
+direction_number: "02"
+weight: 20
 ---
