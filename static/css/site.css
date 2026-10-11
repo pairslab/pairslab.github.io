@@ -2038,10 +2038,6 @@ button {
   grid-template-columns: 210px minmax(0, 1fr);
 }
 
-.publication-item.is-featured {
-  box-shadow: inset 3px 0 var(--blue);
-}
-
 .publication-thumb {
   display: grid;
   overflow: hidden;
@@ -4135,10 +4131,6 @@ button {
     gap: 20px;
     padding: 24px 0;
     grid-template-columns: 120px minmax(0, 1fr);
-  }
-
-  .publication-item.is-featured {
-    box-shadow: none;
   }
 
   .publication-body h3 {

@@ -28,7 +28,7 @@
   <div class="research-topic-copy">
     <p class="research-topic-attribution">{{ .attribution }}</p>
     <h3>{{ .title }}</h3>
-    <p>{{ .summary }}</p>
+    <p>{{ .summary | markdownify }}</p>
     {{ with .project_url }}
       <a href="{{ . }}" target="_blank" rel="noreferrer">{{ $.link_label }} <span aria-hidden="true">↗</span></a>
     {{ end }}

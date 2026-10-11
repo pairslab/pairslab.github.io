@@ -1,3 +1,13 @@
+- key: radar2plan
+  title: "Radar2Plan: Benchmarking 4D Radar for End-to-End Open-Loop Ego-Trajectory Planning"
+  authors: "Ling Yao, Yichun Xiao, Jin Jin, Yihan Zhang, Fangqiang Ding"
+  venue: Under Review
+  year: 2026
+  kind: Preprint
+  topic: Reliable Mobile Autonomy
+  image: images/publications/radar2plan.jpg
+  paper: https://arxiv.org/pdf/2610.06121v1
+
 - key: mld
   title: AI-based Digital Assessment of Gross Motor Function in Metachromatic Leukodystrophy
   authors: "Fangqiang Ding, Jiangpeng He, Javier Gervas-Arruga, David Whiteman, Hermano Igo Krebs"
