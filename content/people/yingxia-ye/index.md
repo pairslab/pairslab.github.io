@@ -1,5 +1,9 @@
 ---
 title: Yingxia Ye
+draft: true
+build:
+  list: never
+  render: never
 description: Yingxia Ye is an MPhil Student at PAIRS Lab, HKUST(GZ).
 group: mphil
 weight: 100
